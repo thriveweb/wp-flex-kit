@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="403px" height="146px" viewBox="0 0 403 146" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="logo" sketch:type="MSLayerGroup" transform="translate(2.000000, 3.000000)">
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="145.5" y="128.3" width="351.5" height="90"></rect>
+            <text id="WOOCOMMERCE-THEME" fill="#000000" sketch:type="MSTextLayer" font-family="Helvetica" font-size="17.8903" font-weight="normal">
+                <tspan x="145.5233" y="141.8124">WOOCOMMERCE THEME</tspan>
+            </text>
+            <circle id="Oval" fill="#04E8C2" sketch:type="MSShapeGroup" cx="359.3" cy="41" r="8.2"></circle>
+            <circle id="Oval" fill="#04E8C2" sketch:type="MSShapeGroup" cx="359.3" cy="100.6" r="8.2"></circle>
+            <path d="M178.4,111.9 L146.2,111.9 L146.2,64.4 L135.2,64.4 L135.2,38 L146.3,38 L146.3,33.1 C146.5,27.9 147.4,22.8 149.7,18 C152,13.2 155.6,9.6 160.3,7.1 C165.1,4.6 170.3,3.8 175.7,3.4 C181.6,3 187.2,4.5 192.6,6.5 C192.8,6.6 193.1,6.9 193.1,7.2 L193.1,32.5 C193.1,32.6 193,32.7 193,32.8 C191.6,32.3 190.2,31.8 188.8,31.4 C187.1,31 185.3,30.5 183.5,30.4 C180.9,30.3 178.2,32 178.3,35.7 L178.3,37.8 L190.3,37.8 L190.3,64.2 L178.3,64.2 C178.4,80.2 178.4,96 178.4,111.9 L178.4,111.9 Z" id="Shape" fill="#000000" sketch:type="MSShapeGroup"></path>
+            <path d="M314.5,80.2 L268.6,80.2 C269.4,82.4 270.7,84.3 272.4,85.8 C275.3,88.4 278.8,89.6 282.6,89.7 C289.5,90 296,88.4 302.1,85.2 C302.8,84.8 303.5,84.3 304.3,83.8 C304.3,84.1 304.4,84.3 304.4,84.5 L304.4,106.6 C304.4,107.2 304.2,107.4 303.7,107.7 C298.8,110.3 293.4,111.6 287.9,112.5 C284,113.1 280.1,113.3 276.2,113.1 C270.1,112.7 264.3,111.1 259,108.2 C253.9,105.4 249.5,101.7 246.1,96.9 C242.7,92.1 240.5,86.9 239.6,81.1 C238.6,75.2 239,69.3 240.7,63.6 C242.2,58.5 244.8,54 248.2,50 C253.2,44.3 259.4,40.4 266.7,38.3 C273,36.5 279.4,36 285.8,37.2 C296.5,39.2 304.3,45.2 309.4,54.7 C312.9,61.1 314.2,67.9 314.2,75.1 C314.5,76.7 314.5,78.4 314.5,80.2 L314.5,80.2 Z M269.3,64.7 L287.1,64.7 C286.1,61.7 282.7,59.1 279.5,59 C274.7,58.8 270.8,60.9 269.3,64.7 L269.3,64.7 Z" id="Shape" fill="#000000" sketch:type="MSShapeGroup"></path>
+            <path d="M200.1,4.7 L232.2,4.7 L232.2,111.8 L200.1,111.8 L200.1,4.7 L200.1,4.7 Z" id="Shape" fill="#000000" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-path" stroke="#050606" stroke-width="4.4726" sketch:type="MSShapeGroup" x="0.3" y="0.1" width="113.3" height="113.3"></rect>
+            <path d="M0.3,113.4 L113.6,0.8" id="Shape" stroke="#050606" stroke-width="4.4726" sketch:type="MSShapeGroup"></path>
+            <path d="M28.2,113.1 L112.4,28.9" id="Shape" stroke="#050606" stroke-width="4.4726" sketch:type="MSShapeGroup"></path>
+            <path d="M53,113.4 L112.7,53.8" id="Shape" stroke="#050606" stroke-width="4.4726" sketch:type="MSShapeGroup"></path>
+            <path d="M79.1,113.4 L113,79.5" id="Shape" stroke="#050606" stroke-width="4.4726" sketch:type="MSShapeGroup"></path>
+            <circle id="Oval" stroke="#050606" stroke-width="4.4726" fill="#04E8C2" sketch:type="MSShapeGroup" cx="30.7" cy="29.4" r="15.4"></circle>
+            <path d="M96.7,95.7 L58.3,57.3" id="Shape" stroke="#050606" stroke-width="4.4726" sketch:type="MSShapeGroup"></path>
+            <path d="M330,111.9 C330,91.1 343,74.3 359.1,74.3 C375.2,74.3 388.2,91.1 388.2,111.9" id="Shape" stroke="#000000" stroke-width="23.8537" sketch:type="MSShapeGroup"></path>
+            <path d="M388.3,36.7 C388.3,57.5 375.3,74.3 359.2,74.3 C343.1,74.3 330,57.4 330,36.7" id="Shape" stroke="#000000" stroke-width="23.8537" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

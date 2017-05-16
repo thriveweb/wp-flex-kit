@@ -1,0 +1,40 @@
+.header {
+  height: 8.4rem;
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: white;
+}
+
+.header__wrap {
+  height: 100%;
+  align-items: center;
+}
+
+.header__nav {
+  .menu {
+    list-style: none;
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    padding: 1.5rem;
+  }
+}
+.logo {
+  height: 100%;
+  text-align: left;
+
+  img {
+    height: 100%;
+  }
+}
