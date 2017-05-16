@@ -1,7 +1,7 @@
-# Flex with benefits
-Wordpress theme for [Thrive Web](http://thriveweb.com.au).
+# Flex Kit
+Wordpress default theme & components for [Thrive Web](http://thriveweb.com.au).
 
-### Benefits include:
+### Kit include:
 
 - [Gulp](http://gulpjs.com/): build system
 - [Browsersync](http://browsersync.io/): for auto browser-refreshing and syncing.

@@ -1,10 +1,12 @@
 <?php
-require_once('functions/default.php');
-require_once('functions/admin.php');
-require_once('functions/enqueue.php');
-require_once('functions/images.php');
-// require_once('functions/gravityforms.php');
-// require_once('functions/yoast.php');
-// require_once('functions/cpt.php');
-require_once('functions/pagination.php');
+
+include_once('_functions/helpers.php');
+require_once('_functions/default.php');
+require_once('_functions/admin.php');
+include_once('_functions/enqueue.php');
+require_once('_functions/images.php');
+// require_once('_functions/gravityforms.php');
+// require_once('_functions/yoast.php');
+// require_once('_functions/cpt.php');
+require_once('_functions/pagination.php');
 ?>

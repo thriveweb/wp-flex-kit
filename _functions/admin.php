@@ -4,7 +4,7 @@
 function my_login_logo() { ?>
   <style type="text/css">
     #login h1 a {
-      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg);
+      background-image: url(<?= get_asset_url('/images/logo.svg') ?>);
       margin: 0 auto;
       height: 150px;
       width: 80%;

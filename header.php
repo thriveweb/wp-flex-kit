@@ -12,7 +12,7 @@
 	<header class="header">
 		<div class="header__wrap container flex">
 			<a class="logo" href="<?php echo esc_url( home_url() ); ?>">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo.svg" alt="<?php bloginfo('name'); ?> "/>
+				<img src="<?= get_asset_url('images/logo.svg') ?>" alt="<?php bloginfo('name'); ?> "/>
 			</a>
 			<nav class="header__nav">
 				<?php wp_nav_menu(array('theme_location' => 'main', 'container' => false )); ?>
