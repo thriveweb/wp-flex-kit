@@ -10,14 +10,31 @@
 <body <?php body_class(); ?>>
 
 	<header class="header">
-		<div class="header__wrap container flex">
+		<div class="header_wrap container flex">
 			<a class="logo" href="<?php echo esc_url( home_url() ); ?>">
 				<img src="<?= get_asset_url('images/logo.svg') ?>" alt="<?php bloginfo('name'); ?> "/>
 			</a>
-			<nav class="header__nav">
+			<nav class="header_nav">
 				<?php wp_nav_menu(array('theme_location' => 'main', 'container' => false )); ?>
 			</nav>
 		</div>
 	</header>
 
-	<?php get_template_part( 'components/page-header' ); ?>
+
+	<?php
+	$cp_name = 'test';
+	$args = array(
+		'id' => 'my-id',
+		'classes' => 'class1 class2',
+		'data' => array(
+			'atribute-one' => 'true',
+			'second-attribute' => 'show-next'
+		)
+	);
+	// new Component('test', $args);
+	// new Component($cp_name);
+
+
+	// duplicate css / js
+	// supply acf selector
+	?>

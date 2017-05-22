@@ -28,8 +28,13 @@
   },
   "dependencies": {
     "fastclick": "^1.0.6",
+    "flickity-imagesloaded": "^2.0.0",
     "lodash": "^4.16.2",
     "webfontloader": "^1.6.26"
   },
-  "browserslist": ["last 2 versions", "ie 10-11", "> 1% in AU"]
+  "browserslist": [
+    "last 2 versions",
+    "ie 10-11",
+    "> 1% in AU"
+  ]
 }
