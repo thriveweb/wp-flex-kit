@@ -18,10 +18,10 @@
 function button(array $args) {
   if ($button = $args['acf_content']['button'][0]) {
     if (!empty($button['type'])) {
-      $id = (is_string($args['id']) ? 'id="' . $args['id'] . '"' : '');
-      $classes = (is_string($args['classes']) ? $args['classes'] : '');
+      $target = '';
+      if (is_array($button['target']) && isset($button['target'][0]) && $button['target'][0] === '_blank') $target = 'target="_blank"';
       ob_start(); ?>
-      <a <?= $id ?> class="button <?= $classes ?>" href="<?= $button['url'] ?>" target="<?= $button['target'] ?>">
+      <a <?= $args['id'] ?> class="button <?= $args['classes'] ?>" href="<?= $button['url'] ?>" <?= $target ?>>
         <?= $button['label'] ?>
       </a>
       <?php
