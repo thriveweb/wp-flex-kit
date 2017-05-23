@@ -23,21 +23,20 @@ $custom_args = array(
 * @param    (array)       All arguments for the component
 * @return   (string)      HTML of this compnent
 */
-
 function accordion($args) {
   if (($accordion = $args['acf_content']) && is_array($accordion)) {
     ob_start(); ?>
     <div <?= $args['id'] ?> class="accordion wrap <?= $args['classes'] ?>">
       <?php $i = 1;
       foreach ($accordion as $item) :
-        $aditional_show_item = (((isset($args['show_item']) && is_numeric($args['show_item'])) && $i === intval($args['show_item'])) ? 'style="display:block;"' : '');
+        $aditional_show_item = (((isset($args['show_item']) && is_numeric($args['show_item'])) && $i === intval($args['show_item'])) ? 'accordion-item-visible' : '');
         ?>
-        <div class="accordion-item">
+        <div class="accordion-item <?= $aditional_show_item ?>">
           <h4 class="wrap">
             <?= $item['title'] ?>
             <?php include('plus-icon.svg') ?>
           </h4>
-          <div class="wrap" <?= $aditional_show_item ?>>
+          <div class="wrap">
             <?= $item['content'] ?>
           </div>
         </div>

@@ -51,5 +51,15 @@
         align-items: center;
       }
     }
+
+    &.accordion-item-visible {
+      h4 svg #vertical {
+        display: none;
+      }
+
+      > div {
+        display: block;
+      }
+    }
   }
 }
