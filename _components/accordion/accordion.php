@@ -29,7 +29,7 @@ function accordion($args) {
     <div <?= $args['id'] ?> class="accordion wrap <?= $args['classes'] ?>">
       <?php $i = 1;
       foreach ($accordion as $item) :
-        $aditional_show_item = (((isset($args['show_item']) && is_numeric($args['show_item'])) && $i === intval($args['show_item'])) ? 'accordion-item-visible' : '');
+        $aditional_show_item = (((isset($args['show_item']) && is_numeric($args['show_item'])) && $i === intval($args['show_item'])) ? 'visible-first-load' : '');
         ?>
         <div class="accordion-item <?= $aditional_show_item ?>">
           <h4 class="wrap">
