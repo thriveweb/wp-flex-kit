@@ -15,7 +15,6 @@ get_header(); ?>
 			<div>
 				<?php
 
-				new component('test', array( 'acf_content' => $banner['button2']));
 				new component('button', array( 'acf_content' => $banner['button2']));
 
 				new component('button', array(

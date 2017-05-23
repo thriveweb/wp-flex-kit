@@ -1,7 +1,7 @@
 <?php
 // ACF Google Maps
-$mapsKey = 'YOUR_KEY';
 function my_acf_init() {
+	$mapsKey = 'YOUR_KEY';
 	acf_update_setting('google_api_key', $mapsKey);
 }
 add_action('acf/init', 'my_acf_init');

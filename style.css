@@ -157,18 +157,6 @@ blockquote { border-left: 0.3rem solid #d1d1d1; margin-left: 0; margin-right: 0;
 
 blockquote *:last-child { margin: 0; }
 
-.button, button { background-color: #9b4dca; border: 0.1rem solid #9b4dca; border-radius: 0; box-sizing: border-box; color: #ffffff; cursor: pointer; display: inline-block; font-size: 1.1rem; font-weight: 700; letter-spacing: .1rem; line-height: 3.8rem; padding: 0 3.0rem; text-align: center; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
-
-.button:hover, .button:focus, button:hover, button:focus { background-color: #606c76; border-color: #606c76; color: #ffffff; outline: 0; }
-
-.button.button-outline, button.button-outline { color: #9b4dca; background-color: transparent; }
-
-.button.button-outline:hover, .button.button-outline:focus, button.button-outline:hover, button.button-outline:focus { color: #606c76; background-color: transparent; border-color: currentColor; }
-
-.button.button-clear, button.button-clear { color: #9b4dca; background-color: transparent; border-color: transparent; }
-
-.button.button-clear:hover, .button.button-clear:focus, button.button-clear:hover, button.button-clear:focus { color: #606c76; background-color: transparent; border-color: transparent; }
-
 code { background: #f4f5f6; border-radius: .4rem; font-size: 86%; padding: .2rem .5rem; margin: 0 .2rem; white-space: nowrap; }
 
 pre { background: #f4f5f6; border-left: 0.3rem solid #9b4dca; font-family: Menlo, Consolas, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, monospace; }
