@@ -1,5 +1,88 @@
-.button {
-  transform: scale(1);
-  border: 10px solid tomato;
-  font-size: 18px;
+//
+// Button
+// --------------------------------------------------
+
+
+// Imports variables and functions from theme otherwice not accessible 
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+.button, button {
+	background: linear-gradient(to right, lighten($color-primary, 3%) 50%, $color-primary 50%);
+	background-color: $color-primary;
+	background-size: 200% 100%;
+	background-position: right bottom;
+	border-radius: 3rem;
+	border: none;
+	box-sizing: border-box;
+	color: $color-initial;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.6rem;
+	font-weight: bold;
+	letter-spacing: .1rem;
+	line-height: 3.8rem;
+	padding: .5rem 3.0rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: lowercase;
+	white-space: nowrap;
+	min-width: 20rem;
+	transition: all .4s ease;
+
+	@media screen and (#{$bp-mobile}) {
+		width: 100%;
+	}
+
+	&:hover {
+		background-position: left bottom;
+		color: $color-initial;
+	}
+
+	&:active {
+		transform: scale(.975);
+	}
+
+	&.secondary {
+		background: linear-gradient(to right, darken($color-secondary, 10%) 50%, $color-secondary 50%);
+		background-size: 200% 100%;
+		background-position: right bottom;
+		background-color: $color-secondary;
+		color: $color-primary;
+
+		&:hover {
+			background-position: left bottom;
+		}
+	}
+
+	&.bordered {
+		background: linear-gradient(to right, rgba($color-primary, .25) 50%, transparent 50%);
+		background-size: 200% 100%;
+		background-position: right bottom;
+		background-color: transparent!important;
+		color: $color-primary;
+		border: 2px solid $color-primary;
+
+		&:hover {
+			background-position: left bottom;
+		}
+
+		&.secondary {
+			background: linear-gradient(to right, rgba($color-secondary, .25) 50%, transparent 50%);
+			background-size: 200% 100%;
+			background-position: right bottom;
+			color: $color-secondary;
+			border-color: $color-secondary;
+
+			&:hover {
+				background-position: left bottom;
+			}
+		}
+	}
 }
