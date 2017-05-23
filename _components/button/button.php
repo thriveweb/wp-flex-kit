@@ -6,6 +6,12 @@
 * @package Component
 */
 
+/**
+* List of custom argruments
+*
+* @var	array
+*/
+$custom_args = array();
 
 /**
 * Button
@@ -27,5 +33,5 @@ function button(array $args) {
       <?php
     }
   }
-  return ($html = ob_get_clean()) ? $html : '';
+  return ob_get_clean();
 }

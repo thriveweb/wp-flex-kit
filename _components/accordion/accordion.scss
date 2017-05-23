@@ -1,0 +1,55 @@
+//
+// accordion
+// --------------------------------------------------
+
+
+// Imports variables and functions from theme
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+.accordion {
+  position: relative;
+
+  .accordion-item {
+    position: relative;
+    height: auto;
+    display: block;
+    border-bottom: 2px solid $dark-grey;
+
+    h4 {
+      position: relative;
+      min-height: 50px;
+      line-height: 2.5rem;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+      color: inherit;
+      font-size: 1.7rem;
+      margin: 0;
+      cursor: pointer;
+
+      svg {
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    > div {
+      display: none;
+
+      .flex {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
