@@ -27,8 +27,8 @@ class Component {
     'cp_path' => false                  // (DON'T CHANGE THIS) Path to the components directory, will be set automaticly
   );
   private $default_args = array(        // Arguments for a component and also uded to check if supplied arguments ar allowed
-    'id' => false,
-    'classes' => false,
+    'id' => '',
+    'classes' => '',
     'acf_content' => false
   );
   private $args = false;                // All arguments will be stored in here
@@ -70,6 +70,7 @@ class Component {
           $return_val = false;
           break;
         }
+        if ($name === 'id' && (is_string($args['id']) && !empty($args['id']))) $args['id'] = 'id="' . $args['id'] . '"';
       }
     }
     if ($return_val) $this->args = array_merge($this->default_args, $args);
