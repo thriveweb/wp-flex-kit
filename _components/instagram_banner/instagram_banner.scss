@@ -1,0 +1,47 @@
+//
+// Button
+// --------------------------------------------------
+
+// Imports variables and functions from theme otherwice not accessible
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+$height: 15rem;
+
+.instagram-banner--wrap{
+  text-align: center;
+
+  .instagram-banner--title{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.8rem;
+    color: $color-primary;
+
+    i{
+      font-size: 2em;
+      vertical-align: middle;
+    }
+  }
+
+  .instagram-banner--row{
+    height: $height;
+    overflow: hidden;
+
+    .instagram-banner--item{
+      height: $height;
+      display: inline-block;
+      
+      img{
+        height: 100%;
+        width: auto;
+        display: block;
+      }
+    }
+  }
+}

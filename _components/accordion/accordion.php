@@ -23,7 +23,7 @@ $custom_args = array(
 * @param    (array)       All arguments for the component
 * @return   (string)      HTML of this compnent
 */
-function accordion($args) {
+function accordion(array $args) {
   if (($accordion = $args['acf_content']) && is_array($accordion)) {
     ob_start(); ?>
     <div <?= $args['id'] ?> class="accordion wrap <?= $args['classes'] ?>">

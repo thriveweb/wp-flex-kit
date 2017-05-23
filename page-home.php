@@ -43,4 +43,9 @@ get_header(); ?>
 	</section>
 <?php endif; ?>
 
+<?php new component('instagram_banner', array(
+	'username' => '',
+	'picture_count' => 10
+)); ?>
+
 <?php get_footer(); ?>
