@@ -65,7 +65,8 @@ class Component_helper {
   protected function add_custom_args($custom_args = array()) {
     foreach ($custom_args as $key => $val) {
       if (is_numeric($key)) $key = $val;
-      $this->default_args[$key] = '';
+      if (!$val) $val = '';
+      $this->default_args[$key] = $val;
     }
   }
 
