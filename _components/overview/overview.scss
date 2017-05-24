@@ -1,0 +1,17 @@
+//
+// Overview
+// --------------------------------------------------
+
+// Imports variables and functions from theme otherwice not accessible
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+div.flex.overview {
+  @extend .flex-row;
+}

@@ -7,6 +7,19 @@ Template Name: Home page
 get_header(); ?>
 <?php //get_template_part('inc-edit'); ?>
 
+
+
+<section class="section">
+	<div class="container">
+		<?php new component('overview', array(
+			'post_type' => 'coffin',
+			'posts_per_page' => 3
+		)); ?>
+	</div>
+</section>
+
+
+
 <?php if ($banner = get_field('banner')) :
 	$banner = $banner[0];
 	?>
@@ -43,9 +56,14 @@ get_header(); ?>
 	</section>
 <?php endif; ?>
 
-<?php new component('instagram_banner', array(
-	'username' => '',
-	'picture_count' => 10
-)); ?>
+<section class="section">
+	<div class="container">
+		<?php new component('instagram_banner', array(
+			'username' => '',
+			'picture_count' => 10
+		)); ?>
+	</div>
+</section>
+
 
 <?php get_footer(); ?>
