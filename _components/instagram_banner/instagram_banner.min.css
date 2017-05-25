@@ -1,1 +1,13 @@
-.flex-row{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-line-pack:center;align-content:center}.instagram-banner--wrap{text-align:center}.instagram-banner--wrap .instagram-banner--title{text-transform:uppercase;letter-spacing:0.1em;font-size:1.8rem;color:#9b4dca}.instagram-banner--wrap .instagram-banner--title i{font-size:2em;vertical-align:middle}.instagram-banner--wrap .instagram-banner--row{height:15rem;overflow:hidden}.instagram-banner--wrap .instagram-banner--row .instagram-banner--item{height:15rem;display:inline-block}.instagram-banner--wrap .instagram-banner--row .instagram-banner--item img{height:100%;width:auto;display:block}
+.flex-row { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-line-pack: center; align-content: center; }
+
+.instagram-banner--wrap { text-align: center; }
+
+.instagram-banner--wrap .instagram-banner--title { text-transform: uppercase; letter-spacing: 0.1em; font-size: 1.8rem; color: #9b4dca; }
+
+.instagram-banner--wrap .instagram-banner--title i { font-size: 2em; vertical-align: middle; }
+
+.instagram-banner--wrap .instagram-banner--row { height: 15rem; overflow: hidden; }
+
+.instagram-banner--wrap .instagram-banner--row .instagram-banner--item { height: 15rem; display: inline-block; }
+
+.instagram-banner--wrap .instagram-banner--row .instagram-banner--item img { height: 100%; width: auto; display: block; }

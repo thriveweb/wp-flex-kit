@@ -72,7 +72,7 @@ gulp.task('sass', function () {
 gulp.task('cp_scss', function () {
   return gulp.src(src.cp_scss)
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'compact'
     })
     .on('data', function () {
       bs.sockets.emit('fullscreen:message:clear')
