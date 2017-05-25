@@ -13,7 +13,7 @@ get_header(); ?>
 	<div class="container">
 		<?php new component('overview', array(
 			'post_type' => 'coffin',
-			'posts_per_page' => 3
+			'posts_per_page' => '-1',
 		)); ?>
 	</div>
 </section>
