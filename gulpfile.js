@@ -11,7 +11,6 @@ var browserify = require('browserify');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var buffer = require('vinyl-buffer');
-var source = require('vinyl-source-stream');
 var tap = require('gulp-tap');
 
 var src = {
