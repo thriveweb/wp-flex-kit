@@ -14,9 +14,12 @@ module.exports = {
       "error",
       "single"
     ],
+    "no-console": [
+      "warn",
+    ],
     "semi": [
       "error",
-      "never"
+      "always"
     ]
   },
   "parserOptions": {
