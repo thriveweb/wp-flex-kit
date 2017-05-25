@@ -1,3 +1,3 @@
-import FastClick from 'fastclick'
+import FastClick from 'fastclick';
 
-export default () => FastClick(document.body)
+export default () => FastClick(document.body);
