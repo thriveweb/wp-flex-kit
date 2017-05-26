@@ -14,8 +14,15 @@
 $custom_args = array(
   "api_key" => "",
   "options" => array(
-    "scrollwheel" => false
-  )
+    "scrollwheel" => false,
+    "draggable" => true,
+    "disableDefaultUI" => false
+  ),
+  "center" => array(
+    "lat" => -28.076406,
+    "lng" => 153.443729
+  ),
+  'markers' => array()
 );
 
 /**
@@ -60,7 +67,11 @@ function store_locator(array $args) {
       </div>
 
       <div class="store-locator--map" data-options='<?= json_encode($args['options']); ?>'>
-
+        <?php foreach($args['markers'] as $marker): ?>
+          <div class="store-locator--marker"
+            data-center='<?= json_encode($marker['center']); ?>'
+          ></div>
+        <?php endforeach; ?>
       </div>
 
     </div>
