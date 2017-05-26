@@ -102,9 +102,9 @@ gulp.task('cp_scripts', function () {
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
     // load and init sourcemaps
-    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
     .on('data', bs.reload)
     .pipe(gulp.dest('_components/.'));
@@ -120,9 +120,9 @@ gulp.task('scripts', function () {
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
     // load and init sourcemaps
-    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
     .on('data', bs.reload)
     .pipe(gulp.dest('js/.'));
