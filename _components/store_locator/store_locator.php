@@ -11,7 +11,12 @@
 *
 * @var	array
 */
-$custom_args = array();
+$custom_args = array(
+  "api_key" => "",
+  "options" => array(
+    "scrollwheel" => false
+  )
+);
 
 /**
 * Store Locator
@@ -23,6 +28,14 @@ $custom_args = array();
 */
 
 function store_locator(array $args) {
+
+  wp_enqueue_script(
+    'googlemaps',
+    'https://maps.googleapis.com/maps/api/js?key=' . $args['api_key'],
+    $deps = array(),
+    $ver = false,
+    $in_footer = true
+  );
   ob_start(); ?>
 
   <section class="store-locator section">
@@ -46,7 +59,7 @@ function store_locator(array $args) {
         </label>
       </div>
 
-      <div class="store-locator--map">
+      <div class="store-locator--map" data-options='<?= json_encode($args['options']); ?>'>
 
       </div>
 
