@@ -2,13 +2,26 @@
 // Repeated Elements
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.section{
+.section {
   padding: 5rem 0;
-  &.thin{
+
+  &.thin {
     padding: 2.5rem 0;
   }
-  &.thick{
+
+  &.thick {
     padding: 10rem 0;
+  }
+}
+
+
+.container {
+  width: 95%;
+  max-width: $container-width;
+  margin: 0 auto;
+
+  &.skinny {
+    max-width: $container-width-skinny;
   }
 }
 

@@ -255,6 +255,10 @@ h6 { font-size: 1.6rem; letter-spacing: 0; line-height: 1.4; }
 
 .section.thick { padding: 10rem 0; }
 
+.container { width: 95%; max-width: 1200px; margin: 0 auto; }
+
+.container.skinny { max-width: 850px; }
+
 .dark { background-color: #565656; color: white; }
 
 .black { background-color: #1a1a1a; color: white; }

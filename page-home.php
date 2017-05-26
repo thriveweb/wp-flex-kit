@@ -18,6 +18,9 @@ get_header(); ?>
 	</div>
 </section>
 
+<?php
+new component('store_locator', array( 'acf_content' => $banner['button2']));
+?>
 
 
 <?php if ($banner = get_field('banner')) :
