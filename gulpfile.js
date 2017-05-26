@@ -106,6 +106,7 @@ gulp.task('cp_scripts', function () {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
+    .on('data', bs.reload)
     .pipe(gulp.dest('_components/.'));
 });
 
@@ -123,6 +124,7 @@ gulp.task('scripts', function () {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
+    .on('data', bs.reload)
     .pipe(gulp.dest('js/.'));
 });
 
