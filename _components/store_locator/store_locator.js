@@ -17,8 +17,6 @@
     disableDefaultUI: options.disableDefaultUI || false
   };
 
-  initMap();
-
   function initMap () {
     map = new google.maps.Map(mapElement, args);
     markerElements.forEach(markerEl => addMarker(markerEl, map));
@@ -34,11 +32,14 @@
     markers.push( marker );
     if( markerEl.innerHTML ) {
       const infowindow = new google.maps.InfoWindow({
-        content		: markerEl.innerHTML
+        content: markerEl.innerHTML
       });
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.open( map, marker );
       });
     }
   }
+
+  initMap();
+
 })();

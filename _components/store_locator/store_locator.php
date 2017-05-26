@@ -22,7 +22,30 @@ $custom_args = array(
     "lat" => -28.076406,
     "lng" => 153.443729
   ),
-  'markers' => array()
+  'markers' => array(
+		array(
+			'center' => array(
+				"lat" => -28.076406,
+				"lng" => 153.443729,
+      ),
+      "title" => "Marker 1",
+      "address" => "53 Brookes Street, Bown Hills, 4006, QLD",
+      "phone" => "07 3807 0976",
+      "email" => "info@thriveweb.com.au",
+      "website" => "https://thriveweb.com.au"
+		),
+		array(
+			'center' => array(
+				"lat" => -28.096406,
+				"lng" => 153.443729,
+      ),
+      "title" => "Marker 2",
+      "address" => "53 Brookes Street, Bown Hills, 4006, QLD",
+      "phone" => "07 3807 0976",
+      "email" => "info@thriveweb.com.au",
+      "website" => "https://thriveweb.com.au"
+		)
+	)
 );
 
 /**
@@ -68,9 +91,20 @@ function store_locator(array $args) {
 
       <div class="store-locator--map" data-options='<?= json_encode($args['options']); ?>'>
         <?php foreach($args['markers'] as $marker): ?>
-          <div class="store-locator--marker"
-            data-center='<?= json_encode($marker['center']); ?>'
-          ></div>
+          <div class="store-locator--marker" data-center='<?= json_encode($marker['center']); ?>'>
+            <h4 class="store-locator--marker--title"><?= $marker['title']; ?></h4>
+            <?php foreach(array('address', 'phone', 'email', 'website') as $meta): ?>
+              <?php if ($marker[$meta]): ?>
+                <div class="store-locator--marker--meta">
+                  <span class="store-locator--marker--meta--heading"><?= $meta; ?></span>
+                  <?php $content = $marker[$meta]; ?>
+                  <?php $content = $meta === 'email' ? '<a href="mailto:' . $marker[$meta] . '">' . $marker[$meta] . '</a>' : $content; ?>
+                  <?php $content = $meta === 'website' ? '<a href="' . $marker[$meta] . '">' . $marker[$meta] . '</a>' : $content; ?>
+                  <span class="store-locator--marker--meta--content"><?= $content; ?></span>
+                </div>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          </div>
         <?php endforeach; ?>
       </div>
 
