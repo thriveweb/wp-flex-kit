@@ -1,3 +1,5 @@
+import _throttle from 'lodash/throttle';
+
 (function storeLocator () {
   let map = null;
   let markers = [];
@@ -20,6 +22,18 @@
   function initMap () {
     map = new google.maps.Map(mapElement, args);
     markerElements.forEach(markerEl => addMarker(markerEl, map));
+    addListeners();
+  }
+
+  function addListeners () {
+    map.addListener('bounds_changed', _throttle(updateVisible, 200));
+  }
+
+  function updateVisible () {
+    const bounds = map.getBounds();
+    markers.forEach(marker => {
+      marker.isWithinBounds = bounds.contains(marker.getPosition());
+    });
   }
 
   function addMarker( markerEl, map ) {
@@ -41,5 +55,4 @@
   }
 
   initMap();
-
 })();
