@@ -33,7 +33,9 @@ import _throttle from 'lodash/throttle';
   function updateVisible () {
     const bounds = map.getBounds();
     markers.forEach(marker => {
-      marker.isWithinBounds = bounds.contains(marker.getPosition());
+      const isVisible = bounds.contains(marker.getPosition());
+      marker.setVisible(isVisible);
+      if (!isVisible) marker.infowindow.close();
     });
     renderResults();
   }
@@ -41,9 +43,9 @@ import _throttle from 'lodash/throttle';
   function renderResults () {
     let results = [];
     markers.forEach(marker => {
-      if (!marker.isWithinBounds) return;
+      if (!marker.visible) return;
       let markerHTML = `
-        <div class="store-locator--results--item"
+        <div class="store-locator--results--item">
           ${marker.infowindow.content}
         </div>
       `;
