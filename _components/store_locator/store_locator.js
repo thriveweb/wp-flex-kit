@@ -5,6 +5,7 @@ import _throttle from 'lodash/throttle';
   let markers = [];
   const mapElement = document.querySelector('.store-locator--map');
   const markerElements = Array.from(document.querySelectorAll('.store-locator--map .store-locator--marker'));
+  const resultsElement = document.querySelector('.store-locator--results');
   // get options passed from php
   const options = JSON.parse(mapElement.dataset.options);
 
@@ -34,6 +35,21 @@ import _throttle from 'lodash/throttle';
     markers.forEach(marker => {
       marker.isWithinBounds = bounds.contains(marker.getPosition());
     });
+    renderResults();
+  }
+
+  function renderResults () {
+    let results = [];
+    markers.forEach(marker => {
+      if (!marker.isWithinBounds) return;
+      let markerHTML = `
+        <div class="store-locator--results--item"
+          ${marker.infowindow.content}
+        </div>
+      `;
+      results.push(markerHTML);
+    });
+    resultsElement.innerHTML = results.join('');
   }
 
   function addMarker( markerEl, map ) {
@@ -45,11 +61,11 @@ import _throttle from 'lodash/throttle';
     });
     markers.push( marker );
     if( markerEl.innerHTML ) {
-      const infowindow = new google.maps.InfoWindow({
+      marker.infowindow = new google.maps.InfoWindow({
         content: markerEl.innerHTML
       });
       google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open( map, marker );
+        marker.infowindow.open( map, marker );
       });
     }
   }

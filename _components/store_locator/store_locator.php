@@ -108,6 +108,10 @@ function store_locator(array $args) {
         <?php endforeach; ?>
       </div>
 
+      <div class="store-locator--results">
+        
+      </div>
+
     </div>
   </section>
 
