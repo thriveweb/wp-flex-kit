@@ -38,3 +38,15 @@
   margin-right: 1rem;
   font-weight: 400;
 }
+
+.store-locator--results {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.store-locator--results--item {
+  width: calc(33.33% - 4rem);
+  margin: 2rem;
+}
