@@ -62,10 +62,8 @@ gulp.task('sass', function () {
     .pipe(autoprefixer())
     .pipe(rucksack())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(src.css))
-    .pipe(bs.stream({
-      match: '**/*.css'
-    }));
+    .on('data', bs.reload)
+    .pipe(gulp.dest(src.css));
 });
 
 // Compile sass into CSS
@@ -89,6 +87,7 @@ gulp.task('cp_scss', function () {
     .pipe(autoprefixer())
     .pipe(rucksack())
     .pipe(rename({suffix: '.min'}))
+    .on('data', bs.reload)
     .pipe(gulp.dest('_components/.'));
 });
 
@@ -102,10 +101,11 @@ gulp.task('cp_scripts', function () {
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
     // load and init sourcemaps
-    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
+    .on('data', bs.reload)
     .pipe(gulp.dest('_components/.'));
 });
 
@@ -119,10 +119,11 @@ gulp.task('scripts', function () {
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
     // load and init sourcemaps
-    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
+    .on('data', bs.reload)
     .pipe(gulp.dest('js/.'));
 });
 

@@ -18,6 +18,11 @@ get_header(); ?>
 	</div>
 </section>
 
+<?php
+new component('store_locator', array(
+	'api_key' => ''
+));
+?>
 
 
 <?php if ($banner = get_field('banner')) :

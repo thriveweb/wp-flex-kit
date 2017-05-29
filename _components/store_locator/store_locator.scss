@@ -1,0 +1,55 @@
+//
+// Store Locator
+// --------------------------------------------------
+
+// Imports variables and functions from theme otherwise not accessible
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+.store-locator {
+
+}
+
+.store-locator--heading {
+
+}
+
+.store-locator--inputs {}
+
+.store-locator--map {
+  height: 50rem;
+  max-height: 100vh;
+}
+
+.store-locator--marker {}
+
+.store-locator--marker--title {}
+
+.store-locator--marker--meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.store-locator--marker--meta--heading {
+  text-transform: capitalize;
+  margin-right: 1rem;
+  font-weight: 400;
+}
+
+.store-locator--results {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+}
+
+.store-locator--results--item {
+  width: calc(33.33% - 2rem);
+  margin: 1rem;
+  border: 1px solid $light-grey;
+  padding: 1rem 2rem;
+}
