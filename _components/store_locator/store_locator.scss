@@ -44,9 +44,12 @@
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: wrap;
+  padding-top: 5rem;
 }
 
 .store-locator--results--item {
-  width: calc(33.33% - 4rem);
-  margin: 2rem;
+  width: calc(33.33% - 2rem);
+  margin: 1rem;
+  border: 1px solid $light-grey;
+  padding: 1rem 2rem;
 }
