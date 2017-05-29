@@ -62,10 +62,8 @@ gulp.task('sass', function () {
     .pipe(autoprefixer())
     .pipe(rucksack())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(src.css))
-    .pipe(bs.stream({
-      match: '**/*.css'
-    }));
+    .on('data', bs.reload)
+    .pipe(gulp.dest(src.css));
 });
 
 // Compile sass into CSS
@@ -89,6 +87,7 @@ gulp.task('cp_scss', function () {
     .pipe(autoprefixer())
     .pipe(rucksack())
     .pipe(rename({suffix: '.min'}))
+    .on('data', bs.reload)
     .pipe(gulp.dest('_components/.'));
 });
 
