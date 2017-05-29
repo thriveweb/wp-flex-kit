@@ -49,7 +49,7 @@ import _throttle from 'lodash/throttle';
     var place = autocomplete.getPlace();
     if (place.geometry) {
       map.panTo(place.geometry.location);
-      map.setZoom(15);
+      map.setZoom(args.zoom);
     } else {
       autocompleteElement.placeholder = 'Enter a city';
     }
