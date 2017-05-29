@@ -19,7 +19,9 @@ get_header(); ?>
 </section>
 
 <?php
-new component('store_locator', array( 'acf_content' => $banner['button2']));
+new component('store_locator', array(
+	'api_key' => ''
+));
 ?>
 
 
