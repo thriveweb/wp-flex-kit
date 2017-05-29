@@ -3,9 +3,14 @@ import _throttle from 'lodash/throttle';
 (function storeLocator () {
   let map = null;
   let markers = [];
+  let autocomplete;
+  let countryRestrict = { country: 'au'};
+
   const mapElement = document.querySelector('.store-locator--map');
   const markerElements = Array.from(document.querySelectorAll('.store-locator--map .store-locator--marker'));
   const resultsElement = document.querySelector('.store-locator--results');
+  const autocompleteElement = document.querySelector('.store-locator--inputs--location input');
+
   // get options passed from php
   const options = JSON.parse(mapElement.dataset.options);
 
@@ -23,11 +28,31 @@ import _throttle from 'lodash/throttle';
   function initMap () {
     map = new google.maps.Map(mapElement, args);
     markerElements.forEach(markerEl => addMarker(markerEl, map));
+    initAutocomplete();
     addListeners();
+  }
+
+  function initAutocomplete () {
+    autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */ (autocompleteElement), {
+        types: ['(cities)'],
+        componentRestrictions: countryRestrict
+    });
   }
 
   function addListeners () {
     map.addListener('bounds_changed', _throttle(updateVisible, 200));
+    autocomplete.addListener('place_changed', onPlaceChanged);
+  }
+
+  function onPlaceChanged() {
+    var place = autocomplete.getPlace();
+    if (place.geometry) {
+      map.panTo(place.geometry.location);
+      map.setZoom(15);
+    } else {
+      autocompleteElement.placeholder = 'Enter a city';
+    }
   }
 
   function updateVisible () {

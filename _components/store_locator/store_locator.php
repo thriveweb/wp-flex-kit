@@ -61,7 +61,7 @@ function store_locator(array $args) {
 
   wp_enqueue_script(
     'googlemaps',
-    'https://maps.googleapis.com/maps/api/js?key=' . $args['api_key'],
+    'https://maps.googleapis.com/maps/api/js?libraries=places&key=' . $args['api_key'],
     $deps = array(),
     $ver = false,
     $in_footer = true
@@ -109,7 +109,7 @@ function store_locator(array $args) {
       </div>
 
       <div class="store-locator--results">
-        
+
       </div>
 
     </div>
