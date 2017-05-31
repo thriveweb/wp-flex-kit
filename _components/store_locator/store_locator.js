@@ -30,6 +30,20 @@ import _throttle from 'lodash/throttle';
     markerElements.forEach(markerEl => addMarker(markerEl, map));
     initAutocomplete();
     addListeners();
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        map.panTo(pos);
+      }, (err) => console.log('Geolocation failed', err));
+    } else {
+      // Browser doesn't support Geolocation
+      console.log(`Browser doesn't support Geolocation`);
+    }
   }
 
   function initAutocomplete () {
