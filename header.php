@@ -9,16 +9,7 @@
 
 <body <?php body_class(); ?>>
 
-	<header class="header">
-		<div class="header_wrap container flex">
-			<a class="logo" href="<?php echo esc_url( home_url() ); ?>">
-				<img src="<?= get_asset_url('images/logo.svg') ?>" alt="<?php bloginfo('name'); ?> "/>
-			</a>
-			<nav class="header_nav">
-				<?php wp_nav_menu(array('theme_location' => 'main', 'container' => false )); ?>
-			</nav>
-		</div>
-	</header>
+	<?php new Component('simple_header'); ?>
 
 	<div class="content-wrap">
 

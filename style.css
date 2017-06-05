@@ -131,6 +131,12 @@ textarea { overflow: auto; }
 /** Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X. */
 [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
+.force_hide { display: none; visibility: hidden; opacity: 0; height: 0; width: 0; margin: 0; padding: 0; }
+
+.auto-height::after, .auto-height::before { content: ''; display: table; }
+
+.auto-height::after { clear: both; }
+
 .flex-row { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -ms-flex-line-pack: center; align-content: center; }
 
 @-webkit-keyframes fadeIn { from { opacity: 0; }
@@ -255,9 +261,13 @@ h6 { font-size: 1.6rem; letter-spacing: 0; line-height: 1.4; }
 
 .section.thick { padding: 10rem 0; }
 
-.container { width: 95%; max-width: 1200px; margin: 0 auto; }
+.container { width: calc(100% - 2rem); max-width: 1440px; margin: 0 auto; }
 
-.container.skinny { max-width: 850px; }
+.container.small { max-width: 1200px; }
+
+.container.smaller { max-width: 1000px; }
+
+.container.skinny { max-width: 800px; }
 
 .dark { background-color: #565656; color: white; }
 
