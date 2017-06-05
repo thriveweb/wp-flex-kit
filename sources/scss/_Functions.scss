@@ -1,3 +1,42 @@
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} { @content; }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') { @content; }
+  @include optional-at-root(':-moz-placeholder') { @content; }
+  @include optional-at-root('::-moz-placeholder') { @content; }
+  @include optional-at-root(':-ms-input-placeholder') { @content; }
+}
+
+@mixin background($size, $position, $repeat) {
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+// force a element to he hidden
+.force_hide {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// Clear a float with .clearfix
+.auto-height {
+	&::after, &::before {
+		content: '';
+		display: table;
+	}
+	&::after {
+		clear: both;
+	}
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
