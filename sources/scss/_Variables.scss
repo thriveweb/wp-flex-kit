@@ -27,9 +27,11 @@ $bp-desktophd: "max-width: 1200px" !default;
 // Typography
 $font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
-//Grid Variables
-$container-width: 1200px !default;
-$container-width-skinny: 850px !default;
+//Container Variables
+$container-width: 1440px !default;
+$container-width-small: 1200px !default;
+$container-width-smaller: 1000px !default;
+$container-width-skinny: 800px !default;
 
 // Misc
 $global-radius: 4px !default;

@@ -16,10 +16,16 @@
 
 
 .container {
-  width: 95%;
+  width: cacl(100% - 2rem);
   max-width: $container-width;
   margin: 0 auto;
 
+  &.small {
+    max-width: $container-width-small;
+  }
+  &.smaller {
+    max-width: $container-width-smaller;
+  }
   &.skinny {
     max-width: $container-width-skinny;
   }
@@ -114,38 +120,38 @@
 
 // Float either direction
 .float-right {
-	float: right;
+  float: right;
 }
 
 .float-left {
-	float: left;
+  float: left;
 }
 
 // Clear a float with .clearfix
 .clearfix {
-	*zoom: 1;
+  *zoom: 1;
 
-	&:after,
-	&:before {
-		content: '';
-		display: table;
-	}
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+  }
 
-	&:after {
-		clear: both;
-	}
+  &:after {
+    clear: both;
+  }
 }
 
 .tacenter{
-	text-align: center;
+  text-align: center;
 }
 .taright{
-	text-align: right;
+  text-align: right;
 }
 .taleft{
-	text-align: left;
+  text-align: left;
 }
 
 .relative{
-	position: relative;
+  position: relative;
 }
