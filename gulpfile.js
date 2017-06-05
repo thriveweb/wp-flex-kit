@@ -34,7 +34,7 @@ gulp.task('serve', ['sass', 'scripts'], function () {
     notify: false
   });
 
-  gulp.watch(src.scss, ['sass']);
+  gulp.watch(src.scss, ['sass', 'cp_scss']);
   gulp.watch(src.cp_scss, ['cp_scss']);
   gulp.watch([src.js, src.cp_js, ignore, '!**/**.min.js'], ['scripts-watch']);
   gulp.watch([src.php, ignore]).on('change', bs.reload);
