@@ -19,22 +19,3 @@
 			</nav>
 		</div>
 	</header>
-
-
-	<?php
-	$cp_name = 'test';
-	$args = array(
-		'id' => 'my-id',
-		'classes' => 'class1 class2',
-		'data' => array(
-			'atribute-one' => 'true',
-			'second-attribute' => 'show-next'
-		)
-	);
-	// new Component('test', $args);
-	// new Component($cp_name);
-
-
-	// duplicate css / js
-	// supply acf selector
-	?>
