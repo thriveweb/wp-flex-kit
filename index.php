@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<?php get_template_part('inc-edit');?>
 
 <section class="blog-nav--section section light">
 	<div class="container skinny tacenter">

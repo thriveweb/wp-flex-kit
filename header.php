@@ -19,3 +19,7 @@
 			</nav>
 		</div>
 	</header>
+
+	<div class="content-wrap">
+
+		<?php get_template_part('inc-edit'); ?>

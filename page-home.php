@@ -5,9 +5,6 @@ Template Name: Home page
 */
 
 get_header(); ?>
-<?php //get_template_part('inc-edit'); ?>
-
-
 
 <section class="section">
 	<div class="container">
