@@ -64,7 +64,7 @@
 
 .background-image{
   position: absolute 0;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   @include background(cover, center, no-repeat);
   img{
