@@ -1,0 +1,109 @@
+[
+    {
+        "key": "group_5934e81c805f0",
+        "title": "Social Media",
+        "fields": [
+            {
+                "key": "field_5936310109df1",
+                "label": "Social Links",
+                "name": "social_links",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 1,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Add Link",
+                "sub_fields": [
+                    {
+                        "key": "field_5936313f09df2",
+                        "label": "Name",
+                        "name": "name",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "facebook": "Facebook",
+                            "twitter": "Twitter",
+                            "instagram": "Instagram",
+                            "linkedin": "LinkedIn",
+                            "youtube": "Youtube",
+                            "email": "Email",
+                            "pinterest": "Pinterest",
+                            "google": "Google+"
+                        },
+                        "default_value": [],
+                        "allow_null": 1,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "return_format": "array",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_593631f309df3",
+                        "label": "URL",
+                        "name": "url",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "http:\/\/www\/facebook.com"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-social-media"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "custom_fields",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": 1,
+        "description": ""
+    }
+]

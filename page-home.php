@@ -21,6 +21,12 @@ new component('store_locator', array(
 ));
 ?>
 
+<?php
+new component('social_links', array(
+	'show_labels' => false
+));
+?>
+
 
 <?php if ($banner = get_field('banner')) :
 	$banner = $banner[0];
