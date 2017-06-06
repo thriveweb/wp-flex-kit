@@ -24,10 +24,8 @@ $custom_args = array();
 function button(array $args) {
   if ($button = $args['acf_content']['button'][0]) {
     if (!empty($button['type'])) {
-      $target = '';
-      if (is_array($button['target']) && isset($button['target'][0]) && $button['target'][0] === '_blank') $target = 'target="_blank"';
       ob_start(); ?>
-      <a <?= $args['id'] ?> class="button <?= $args['classes'] ?>" href="<?= $button['url'] ?>" <?= $target ?>>
+      <a <?= $args['id'] ?> class="button <?= $args['classes'] ?>" href="<?= $button[$button['type']] ?>" target="<?= $button['new_tab'] ? '_blank' : '_self' ?>">
         <?= $button['label'] ?>
       </a>
       <?php
