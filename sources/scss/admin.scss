@@ -1,0 +1,48 @@
+/* User style
+--------------------------------------*/
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head,
+#adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div,
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+.folded #adminmenu li.current.menu-top,
+.folded #adminmenu li.wp-has-current-submenu {
+    background: #00b0ab
+}
+
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
+#adminmenu a:hover,
+#adminmenu li.menu-top>a:focus,
+#wpadminbar .ab-top-menu>li.hover>.ab-item,
+#wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus,
+#wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item,
+#wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus {
+    color: #00b0ab !important;
+}
+
+#adminmenu li a.wp-menu-open:hover,
+#adminmenu li a.wp-menu-open:focus,
+#adminmenu li a.current:hover,
+#adminmenu li a.current:focus {
+    color: #4b4b4b !important
+}
+
+#wpadminbar {
+    background: #4b4b4b
+}
+
+/* login
+--------------------------------------*/
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+.wp-core-ui .button-primary {
+	border: 1px solid #000;
+	background: #000 !important;
+	text-shadow: none;
+    &:hover {
+    	background: #555 !important;
+    }
+}
