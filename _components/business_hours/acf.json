@@ -1,0 +1,129 @@
+[
+    {
+        "key": "group_593779d233f02",
+        "title": "_business_hours",
+        "fields": [
+            {
+                "key": "field_593779f6fbae4",
+                "label": "Business Hours",
+                "name": "business_hours",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 1,
+                "max": 7,
+                "layout": "block",
+                "button_label": "Add Day",
+                "sub_fields": [
+                    {
+                        "key": "field_59377a11fbae5",
+                        "label": "Day",
+                        "name": "day",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "monday": "Monday",
+                            "tuesday": "Tuesday",
+                            "wednesday": "Wednesday",
+                            "thursday": "Thursday",
+                            "friday": "Friday",
+                            "saturday": "Saturday",
+                            "sunday": "Sunday"
+                        },
+                        "default_value": [],
+                        "allow_null": 1,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "return_format": "array",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_59377a8cfbae6",
+                        "label": "Time",
+                        "name": "time",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 1,
+                        "max": 1,
+                        "layout": "row",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_59377a9cfbae7",
+                                "label": "From",
+                                "name": "from",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "g:i a",
+                                "return_format": "g:i a"
+                            },
+                            {
+                                "key": "field_59377aa0fbae8",
+                                "label": "Till",
+                                "name": "till",
+                                "type": "time_picker",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "g:i a",
+                                "return_format": "g:i a"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 0,
+        "description": ""
+    }
+]
