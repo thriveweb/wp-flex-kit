@@ -23,27 +23,29 @@ $custom_args = array(
 * @param    (array)       All arguments for the component
 * @return   (string)      HTML of this compnent
 */
-function accordion(array $args) {
-  if (($accordion = $args['acf_content']) && is_array($accordion)) {
-    ob_start(); ?>
-    <div <?= $args['id'] ?> class="accordion wrap <?= $args['classes'] ?>">
-      <?php $i = 1;
-      foreach ($accordion as $item) :
-        $aditional_show_item = (((isset($args['show_item']) && is_numeric($args['show_item'])) && $i === intval($args['show_item'])) ? 'visible-first-load' : '');
-        ?>
-        <div class="accordion-item <?= $aditional_show_item ?>">
-          <h4 class="wrap">
-            <?= $item['title'] ?>
-            <?php include('plus-icon.svg') ?>
-          </h4>
-          <div class="wrap">
-            <?= $item['content'] ?>
+if (!function_exists('accordion')) {
+  function accordion(array $args) {
+    if (($accordion = $args['acf_content']) && is_array($accordion)) {
+      ob_start(); ?>
+      <div <?= $args['id'] ?> class="accordion wrap <?= $args['classes'] ?>">
+        <?php $i = 1;
+        foreach ($accordion as $item) :
+          $aditional_show_item = (((isset($args['show_item']) && is_numeric($args['show_item'])) && $i === intval($args['show_item'])) ? 'visible-first-load' : '');
+          ?>
+          <div class="accordion-item <?= $aditional_show_item ?>">
+            <h4 class="wrap">
+              <?= $item['title'] ?>
+              <?php include('plus-icon.svg') ?>
+            </h4>
+            <div class="wrap">
+              <?= $item['content'] ?>
+            </div>
           </div>
-        </div>
-        <?php $i++;
-      endforeach; ?>
-    </div>
-    <?php
+          <?php $i++;
+        endforeach; ?>
+      </div>
+      <?php
+    }
+    return ob_get_clean();
   }
-  return ob_get_clean();
 }

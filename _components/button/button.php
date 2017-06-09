@@ -21,15 +21,17 @@ $custom_args = array();
 * @param    (array)       All arguments for the component
 * @return   (string)      HTML of this compnent
 */
-function button(array $args) {
-  if ($button = $args['acf_content']['button'][0]) {
-    if (!empty($button['type'])) {
-      ob_start(); ?>
-      <a <?= $args['id'] ?> class="button <?= $args['classes'] ?>" href="<?= $button[$button['type']] ?>" target="<?= $button['new_tab'] ? '_blank' : '_self' ?>">
-        <?= $button['label'] ?>
-      </a>
-      <?php
+if (!function_exists('button')) {
+  function button(array $args) {
+    if ($button = $args['acf_content']['button'][0]) {
+      if (!empty($button['type'])) {
+        ob_start(); ?>
+        <a <?= $args['id'] ?> class="button <?= $args['classes'] ?>" href="<?= $button[$button['type']] ?>" target="<?= $button['new_tab'] ? '_blank' : '_self' ?>">
+          <?= $button['label'] ?>
+        </a>
+        <?php
+      }
     }
+    return ob_get_clean();
   }
-  return ob_get_clean();
 }

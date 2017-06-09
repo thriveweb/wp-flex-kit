@@ -33,20 +33,22 @@ $custom_args = array(
 * @param    (none)
 * @return   (none)      HTML of this compnent
 */
-function social_links(array $args) {
-  if (($social_links = get_field('social_links', 'options')) && count($social_links) > 0) :
-    ob_start(); ?>
-    <ul <?= $args['id'] ?> class="social_links <?= $args['classes'] ?>">
-      <?php foreach ($social_links as $link) : ?>
-        <li>
-          <a target="_blank" href="<?= $link['url'] ?>">
-            <i class="fa <?= $args['icons'][$link['name']['value']] ?>" aria-hidden="true"></i>
-            <?= $args['show_labels'] ? $link['name']['label'] : '' ?>
-          </a>
-        </li>
-      <?php endforeach ?>
-    </ul>
-    <?php
-  endif;
-  return ob_get_clean();
+if (!function_exists('social_links')) {
+  function social_links(array $args) {
+    if (($social_links = get_field('social_links', 'options')) && count($social_links) > 0) :
+      ob_start(); ?>
+      <ul <?= $args['id'] ?> class="social_links <?= $args['classes'] ?>">
+        <?php foreach ($social_links as $link) : ?>
+          <li>
+            <a target="_blank" href="<?= $link['url'] ?>">
+              <i class="fa <?= $args['icons'][$link['name']['value']] ?>" aria-hidden="true"></i>
+              <?= $args['show_labels'] ? $link['name']['label'] : '' ?>
+            </a>
+          </li>
+        <?php endforeach ?>
+      </ul>
+      <?php
+    endif;
+    return ob_get_clean();
+  }
 }

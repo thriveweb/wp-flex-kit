@@ -64,7 +64,7 @@ class Component extends Component_helper {
     $this->defaults['cp_path'] = self::get_cp_dir_path($cp_name);
     if (!file_exists($this->defaults['cp_path']) || !is_dir($this->defaults['cp_path'])) trigger_error("No component found with the name you supplied name: '$cp_name'");
     $this->cp_name = $cp_name;
-    include_once($this->get_cp_file_path('php'));
+    require($this->get_cp_file_path('php'));
     if (isset($custom_args) && is_array($custom_args)) $this->add_custom_args($custom_args);
     if (!($this->args = $this->set_args($args))) trigger_error("Invalid argument supplied");
     echo $this->get_html();
