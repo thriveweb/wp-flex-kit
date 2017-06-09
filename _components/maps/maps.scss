@@ -1,0 +1,21 @@
+//
+// Maps
+// --------------------------------------------------
+
+// Imports variables and functions from theme otherwice not accessible
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+.cp-maps {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

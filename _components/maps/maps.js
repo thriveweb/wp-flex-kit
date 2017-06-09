@@ -13,7 +13,7 @@ function new_map( $el ) {
 	const map = new google.maps.Map( $el[0], args);
 	map.markers = [];
 	$markers.each(function(){
-    add_marker( $(this), map );
+		add_marker( $(this), map );
 	});
 	center_map( map );
 	return map;
@@ -43,15 +43,17 @@ function center_map( map ) {
 		bounds.extend( latlng );
 	});
 	if( map.markers.length === 1 ) {
-    map.setCenter( bounds.getCenter() );
-    map.setZoom( 16 );
+		map.setCenter( bounds.getCenter() );
+		map.setZoom( 16 );
 	} else {
 		map.fitBounds( bounds );
 	}
 }
 
-export default () => {
-  $('.acf-map').each(function(){
-    new_map( $(this) );
-  });
-};
+(function initMap($) {
+	$(function() {
+		$('.cp-map').each(function(i){
+			new_map( $(this) );
+		})
+	})
+})(jQuery)
