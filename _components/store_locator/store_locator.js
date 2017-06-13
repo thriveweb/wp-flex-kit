@@ -42,14 +42,14 @@ import _throttle from 'lodash/throttle';
       }, (err) => console.log('Geolocation failed', err));
     } else {
       // Browser doesn't support Geolocation
-      console.log(`Browser doesn't support Geolocation`);
+      console.log('Browser doesn\'t support Geolocation');
     }
   }
 
   function initAutocomplete () {
     autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */ (autocompleteElement), {
-        types: ['(cities)'],
+        types: ['(regions)'],
         componentRestrictions: countryRestrict
     });
   }
