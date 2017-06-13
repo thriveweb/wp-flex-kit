@@ -16,7 +16,7 @@
 }
 
 // force a element to he hidden
-.force_hide {
+%force_hide {
   display: none;
   visibility: hidden;
   opacity: 0;
@@ -27,7 +27,7 @@
 }
 
 // Clear a float with .clearfix
-.auto-height {
+%auto-height {
 	&::after, &::before {
 		content: '';
 		display: table;
@@ -37,7 +37,7 @@
 	}
 }
 
-.flex-row {
+%flex-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

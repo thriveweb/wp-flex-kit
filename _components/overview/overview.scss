@@ -13,5 +13,5 @@
 // -------------------------
 
 div.flex.overview {
-  @extend .flex-row;
+  @extend %flex-row;
 }
