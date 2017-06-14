@@ -1,12 +1,12 @@
 [
     {
         "key": "group_5923827f74734",
-        "title": "_acordion",
+        "title": "_accordion",
         "fields": [
             {
                 "key": "field_5923828c3f248",
-                "label": "Acordion",
-                "name": "acordion",
+                "label": "Accordion",
+                "name": "accordion",
                 "type": "repeater",
                 "instructions": "",
                 "required": 0,
