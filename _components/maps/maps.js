@@ -16,6 +16,7 @@ function new_map( $el ) {
 		add_marker( $(this), map );
 	});
 	center_map( map );
+	window.addEventListener('resize', () => center_map( map ));
 	return map;
 }
 
@@ -48,6 +49,9 @@ function center_map( map ) {
 	} else {
 		map.fitBounds( bounds );
 	}
+
+	// Recentering map
+	// map.panBy(-((window.innerWidth / 2) / 3), 0)
 }
 
 (function initMap($) {
