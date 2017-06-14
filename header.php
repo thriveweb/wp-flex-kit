@@ -9,8 +9,9 @@
 
 <body <?php body_class(); ?>>
 
-	<?php new Component('simple_header'); ?>
+	<?php
+	new Component('simple_header');
+	new Component('edit_link');
+	?>
 
 	<div class="content-wrap">
-
-		<?php get_template_part('inc-edit'); ?>
