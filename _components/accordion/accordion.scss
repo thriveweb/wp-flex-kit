@@ -40,6 +40,13 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+
+        .st0 {
+          fill: none;
+          stroke: #8A8684;
+          stroke-width: 3;
+          stroke-miterlimit: 10;
+        }
       }
     }
 
