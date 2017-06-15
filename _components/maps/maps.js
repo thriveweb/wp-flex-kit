@@ -8,7 +8,8 @@ function new_map( $el ) {
 		mapTypeId	: google.maps.MapTypeId.ROADMAP,
 		draggable: false,
 		disableDefaultUI: true,
-		scrollwheel: false
+		scrollwheel: false,
+		styles: require('./custom_style.json')
 	};
 	const map = new google.maps.Map( $el[0], args);
 	map.markers = [];
