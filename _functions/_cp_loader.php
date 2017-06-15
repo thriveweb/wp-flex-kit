@@ -58,7 +58,6 @@ class Component extends Component_helper {
   * @return   (string)      HTML for requested component
   */
   public function __construct($cp_name = '', array $args = array()) {
-    // parent::__construct();
     $cp_name = (string) $cp_name;
     if (empty($cp_name)) trigger_error('Please supply a component name.');
     $this->defaults['cp_path'] = self::get_cp_dir_path($cp_name);
@@ -89,23 +88,17 @@ class Component extends Component_helper {
   * Creates style and scripts for all requested elements
   */
   public static function get_all_requested_cp_assets() {
-    $html = '';
-    $css = '<style type="text/css">';
-    $js = '<script type="text/javascript">';
+    $css = $js = '';
     foreach (self::$loaded_components as $cp_name) {
-      $cp_dir = self::get_cp_dir_path($cp_name);
-      $css_path = $cp_dir . '/' . $cp_name . '.min.css';
-      $js_path = $cp_dir . '/' . $cp_name . '.min.js';
-      if (file_exists($css_path) && !is_dir($css_path)) {
-        $css .= file_get_contents($css_path);
-      }
-      if (file_exists($js_path) && !is_dir($js_path)) {
-        $js .= file_get_contents($js_path);
-      }
+      $cp_path = self::get_cp_dir_path($cp_name) . '/' . $cp_name;
+      $css_path = $cp_path . '.min.css';
+      $js_path = $cp_path . '.min.js';
+      if (file_exists($css_path) && !is_dir($css_path)) $css .= file_get_contents($css_path);
+      if (file_exists($js_path) && !is_dir($js_path)) $js .= file_get_contents($js_path);
     }
-    $css .= '</style>';
-    $js .= '</script>';
-    $html = $css . $js;
-    echo $html;
+    ob_start(); ?>
+    <style type="text/css"><?= $css ?></style>
+    <script type="text/javascript"><?= $js ?></script>
+    <?php echo ob_get_clean();
   }
 }

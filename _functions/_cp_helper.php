@@ -37,9 +37,7 @@ class Component_helper {
   * Keeps track of all unique loaded components and stores it into an array
   */
   protected function track_cp_load($cp_name) {
-    if (!in_array($cp_name, self::$loaded_components)) {
-      self::$loaded_components[] = $cp_name;
-    }
+    if (!in_array($cp_name, self::$loaded_components)) self::$loaded_components[] = $cp_name;
   }
 
   /**
