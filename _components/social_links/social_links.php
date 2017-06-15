@@ -35,7 +35,7 @@ $custom_args = array(
 */
 if (!function_exists('social_links')) {
   function social_links(array $args) {
-    if (($social_links = get_field('social_links', 'options')) && count($social_links) > 0) :
+    if (($social_links = $args['acf_content']) && count($social_links) > 0) :
       ob_start(); ?>
       <ul <?= $args['id'] ?> class="social_links <?= $args['classes'] ?>">
         <?php foreach ($social_links as $link) : ?>

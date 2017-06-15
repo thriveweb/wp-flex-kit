@@ -23,6 +23,7 @@ new component('store_locator', array(
 
 <?php
 new component('social_links', array(
+	'acf_content' => get_field('social_links', 'options')
 	'show_labels' => false
 ));
 ?>
