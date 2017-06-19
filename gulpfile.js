@@ -43,88 +43,94 @@ gulp.task('serve', ['sass', 'scripts'], function () {
 // Compile sass into CSS
 gulp.task('sass', function () {
   return gulp.src(src.scss)
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'compact'
-    })
-    .on('data', function () {
-      bs.sockets.emit('fullscreen:message:clear');
-    })
-    .on('error', function (err) {
-      bs.sockets.emit('fullscreen:message', {
-        title: err.relativePath,
-        body: err.message,
-        timeout: 100000
-      });
-      gutil.log(err.message);
-      this.emit('end');
-    }))
-    .pipe(autoprefixer())
-    .pipe(rucksack())
-    .pipe(sourcemaps.write('.'))
-    .on('data', bs.reload)
-    .pipe(gulp.dest(src.css));
+  .pipe(sourcemaps.init())
+  .pipe(sass({
+    outputStyle: 'compact'
+  })
+  .on('data', function () {
+    bs.sockets.emit('fullscreen:message:clear');
+  })
+  .on('error', function (err) {
+    bs.sockets.emit('fullscreen:message', {
+      title: err.relativePath,
+      body: err.message,
+      timeout: 100000
+    });
+    gutil.log(err.message);
+    this.emit('end');
+  }))
+  .pipe(autoprefixer())
+  .pipe(rucksack())
+  .pipe(sourcemaps.write('.'))
+  .on('data', bs.reload)
+  .pipe(gulp.dest(src.css));
 });
 
 // Compile sass into CSS
 gulp.task('cp_scss', function () {
   return gulp.src(src.cp_scss)
-    .pipe(sass({
-      outputStyle: 'compressed'
-    })
-    .on('data', function () {
-      bs.sockets.emit('fullscreen:message:clear');
-    })
-    .on('error', function (err) {
-      bs.sockets.emit('fullscreen:message', {
-        title: err.relativePath,
-        body: err.message,
-        timeout: 100000
-      });
-      gutil.log(err.message);
-      this.emit('end');
-    }))
-    .pipe(autoprefixer())
-    .pipe(rucksack())
-    .pipe(rename({suffix: '.min'}))
-    .on('data', bs.reload)
-    .pipe(gulp.dest('_components/.'));
+  .pipe(sass({
+    outputStyle: 'compressed'
+  })
+  .on('data', function () {
+    bs.sockets.emit('fullscreen:message:clear');
+  })
+  .on('error', function (err) {
+    bs.sockets.emit('fullscreen:message', {
+      title: err.relativePath,
+      body: err.message,
+      timeout: 100000
+    });
+    gutil.log(err.message);
+    this.emit('end');
+  }))
+  .pipe(autoprefixer())
+  .pipe(rucksack())
+  .pipe(rename({suffix: '.min'}))
+  .on('data', bs.reload)
+  .pipe(gulp.dest('_components/.'));
 });
 
 gulp.task('cp_scripts', function () {
   return gulp.src([src.cp_js, '!**/**.min.js'], {read: false}) // no need of reading file because browserify does.
-    .pipe(tap(function (file) {
-      gutil.log('bundling ' + file.path);
-      // replace file contents with browserify's bundle stream
-      file.contents = browserify(file.path, {debug: true}).transform('babelify').bundle();
-    }))
-    // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
-    .pipe(buffer())
-    // load and init sourcemaps
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
-    .on('data', bs.reload)
-    .pipe(gulp.dest('_components/.'));
+  .pipe(tap(function (file) {
+    gutil.log('bundling ' + file.path);
+    // replace file contents with browserify's bundle stream
+    file.contents = browserify(file.path, {debug: true}).transform('babelify').bundle();
+  }))
+  // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
+  .pipe(buffer())  .on('error', function(error) {
+    console.log(error.toString())
+    this.emit('end')
+  })
+  // load and init sourcemaps
+  .pipe(sourcemaps.init({loadMaps: true}))
+  .pipe(uglify())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(sourcemaps.write('./'))
+  .on('data', bs.reload)
+  .pipe(gulp.dest('_components/.'));
 });
 
 gulp.task('scripts', function () {
   return gulp.src('./sources/js/main.js', {read: false}) // no need of reading file because browserify does.
-    .pipe(tap(function (file) {
-      gutil.log('bundling ' + file.path);
-      // replace file contents with browserify's bundle stream
-      file.contents = browserify(file.path, {debug: true}).transform('babelify').bundle();
-    }))
-    // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
-    .pipe(buffer())
-    // load and init sourcemaps
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(sourcemaps.write('./'))
-    .on('data', bs.reload)
-    .pipe(gulp.dest('js/.'));
+  .pipe(tap(function (file) {
+    gutil.log('bundling ' + file.path);
+    // replace file contents with browserify's bundle stream
+    file.contents = browserify(file.path, {debug: true}).transform('babelify').bundle();
+  }))
+  // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
+  .pipe(buffer())  .on('error', function(error) {
+    console.log(error.toString())
+    this.emit('end')
+  })
+  // load and init sourcemaps
+  .pipe(sourcemaps.init({loadMaps: true}))
+  .pipe(uglify())
+  .pipe(rename({suffix: '.min'}))
+  .pipe(sourcemaps.write('./'))
+  .on('data', bs.reload)
+  .pipe(gulp.dest('js/.'));
 });
 
 gulp.task('scripts-watch', ['scripts', 'cp_scripts'], function (done) {
