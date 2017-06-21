@@ -4,3 +4,6 @@ node_modules
 npm-debug.log
 *.map
 !gulpfile.js
+_components/.CP_Cache
+flex-kit.min.css
+js/flex-kit.min.js
