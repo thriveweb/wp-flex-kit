@@ -7,9 +7,10 @@
 </footer>
 
 <?php
+
 wp_footer();
 
-Component::get_all_requested_cp_assets();
+Component::load_check();
 
 ?>
 
