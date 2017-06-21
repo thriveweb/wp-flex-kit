@@ -83,22 +83,50 @@ class Component extends Component_helper {
   }
 
   /**
-  * Get_all_requested_cp_assets
+  * Create_assets
   *
-  * Creates style and scripts for all requested elements
+  * Builds a single stylesheet and javascript file for all required components
+  *
+  * @return   (boolean)
   */
-  public static function get_all_requested_cp_assets() {
-    $css = $js = '';
-    foreach (self::$loaded_components as $cp_name) {
-      $cp_path = self::get_cp_dir_path($cp_name) . '/' . $cp_name;
-      $css_path = $cp_path . '.min.css';
-      $js_path = $cp_path . '.min.js';
-      if (file_exists($css_path) && !is_dir($css_path)) $css .= file_get_contents($css_path);
-      if (file_exists($js_path) && !is_dir($js_path)) $js .= file_get_contents($js_path);
+  public static function create_assets() {
+    self::check_clear_cp_cache();
+    $css_path = get_stylesheet_directory() . '/flex-kit.min.css';
+    $js_path = get_stylesheet_directory() . '/js/flex-kit.min.js';
+    $build_css = ENVIRONMENT === 'development' ? true : !file_exists($css_path);
+    $build_js = ENVIRONMENT === 'development' ? true : !file_exists($js_path);
+    if (($build_css || $build_js) && $cp_cache = self::get_cp_cache()) {
+      $css = $js = '';
+      foreach ($cp_cache as $cp_name) {
+        $cp_path = self::get_cp_dir_path($cp_name) . '/' . $cp_name;
+        $js_path = $cp_path . '.min.js';
+        $css_path = $cp_path . '.min.css';
+        if ($build_css && file_exists($css_path) && !is_dir($css_path)) $css .= file_get_contents($css_path);
+        if ($build_js && file_exists($js_path) && !is_dir($js_path)) $js .= file_get_contents($js_path);
+      }
+      if ($build_css) file_put_contents(get_stylesheet_directory() . '/flex-kit.min.css', $css);
+      if ($build_js) file_put_contents(get_stylesheet_directory() . '/js/flex-kit.min.js', $js);
+      return true;
     }
-    ob_start(); ?>
-    <style type="text/css"><?= $css ?></style>
-    <script type="text/javascript"><?= $js ?></script>
-    <?php echo ob_get_clean();
+    return false;
+  }
+
+  /**
+  * Load_check
+  *
+  * Checks if all reqested components are loaded properly
+  *
+  * @return   (boolean)
+  */
+  public static function load_check() {
+    $new_cache = $cache = self::get_cp_cache();
+    $load = self::$loaded_components;
+    foreach ($load as $key => $name) {
+      if (!in_array($name, $cache)) $new_cache[] = $name;
+    }
+    if ($new_cache !== $cache) {
+      self::new_cp_cache($new_cache);
+      self::create_assets();
+    }
   }
 }

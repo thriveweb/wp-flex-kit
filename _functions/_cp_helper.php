@@ -79,4 +79,62 @@ class Component_helper {
   protected static function get_cp_dir_path($cp_name) {
     return (get_stylesheet_directory() . '/_components/' . $cp_name);
   }
+
+  /**
+  * Get_cp_cache
+  *
+  * Gets list of components used in website.
+  *
+  * @return   (array)      List of components
+  */
+  protected static function get_cp_cache() {
+    $path = self::get_cp_dir_path('.CP_Cache');
+    if (file_exists($path) && !is_dir($path)) {
+      $content = file_get_contents($path);
+      if ($content) return json_decode($content);
+    }
+    return false;
+  }
+
+  /**
+  * New_cp_cache
+  *
+  * Generates new cache file
+  */
+  protected static function new_cp_cache($new_cache = array()) {
+    file_put_contents(self::get_cp_dir_path('.CP_Cache'), json_encode($new_cache));
+    unlink(get_stylesheet_directory() . '/flex-kit.min.css');
+    unlink(get_stylesheet_directory() . '/js/flex-kit.min.js');
+    ob_start(); ?>
+    <script>window.location = window.location.href;</script>
+    <?php echo ob_get_clean();
+  }
+
+  /**
+  * Check_clear_cp_cache
+  *
+  * Removes all component cache files if user calls specific url.
+  * Get key refreches every page load and securety key expires after 5 minutes.
+  */
+  protected static function check_clear_cp_cache() {
+    if (is_user_logged_in()) {
+      global $current_user;
+      wp_get_current_user();
+      if ($current_user->ID === 1) {
+        if (isset($_SESSION['renew_cp_cache_uri_selector']) && isset($_GET[$_SESSION['renew_cp_cache_uri_selector']])) {
+          $page_loaded_at = $_GET[$_SESSION['renew_cp_cache_uri_selector']];
+          $now = time();
+          if (($now - $page_loaded_at) <= 300) { // 300 = 5 minutes
+            unlink(self::get_cp_dir_path('.CP_Cache'));
+            unlink(get_stylesheet_directory() . '/flex-kit.min.css');
+            unlink(get_stylesheet_directory() . '/js/flex-kit.min.js');
+            echo 'Success: cleared component cache.';
+          } else {
+            echo 'Notice: securety key expited, please try again!';
+          }
+          echo '<br /><a href="' . get_permalink() . '">Return to page</a>'; exit;
+        }
+      }
+    }
+  }
 }
