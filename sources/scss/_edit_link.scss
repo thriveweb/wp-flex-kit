@@ -2,54 +2,49 @@
 // Edit Link
 // --------------------------------------------------
 
-// Imports variables and functions from theme otherwice not accessible
-// -------------------------
+.edit_link, .cp_cache {
+  position: fixed;
+  margin: 0;
+  top: 11rem;
+  left: 10px;
+  z-index: 99999;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  i {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    background-color: $color-secondary;
+    border-radius: 30px;
+    font-size: 15px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  span {
+    background-color: $color-secondary;
+    text-transform: uppercase;
+    padding: 3px 5px;
+    border-radius: 2px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  a {
+    color: #ffffff;
+    background-color: transparent;
+  }
+  a:hover i {
+    background-color: $color-primary;
+    color: #ffffff;
+  }
+  a:hover span {
+    background-color: $color-primary;
+    color: #ffffff;
+  }
+}
 
-@import '../../sources/scss/_Functions';
-@import '../../sources/scss/_Variables';
-@import '../../sources/scss/_Color';
-
-// Base styles
-// -------------------------
-
-.edit_link {
-    position: fixed;
-    margin: 0;
-    top: 11rem;
-    left: 10px;
-    z-index: 99999;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: bold;
-		i {
-        width: 25px;
-        height: 25px;
-        line-height: 25px;
-		    text-align: center;
-		    background-color: $color-secondary;
-		    border-radius: 30px;
-		    font-size: 15px;
-		    -webkit-transition: all 0.2s ease;
-		    transition: all 0.2s ease;
-		}
-		span {
-			 background-color: $color-secondary;
-			 text-transform: uppercase;
-			 padding: 3px 5px;
-			 border-radius: 2px;
-			 -webkit-transition: all 0.2s ease;
-			 transition: all 0.2s ease;
-	 }
-	 a {
-	     color: #ffffff;
-	     background-color: transparent;
-	 }
-	 a:hover i {
-	     background-color: $color-primary;
-	     color: #ffffff;
-	 }
-	 a:hover span {
-	     background-color: $color-primary;
-	     color: #ffffff;
-	 }
+.cp_cache {
+  top: 15rem;
 }
