@@ -21,8 +21,9 @@
   const $nav_children = $nav.find('li.menu-item-has-children')
   if ($nav_children.length) {
     $nav_children.each(function(i, elem) {
-      $(this).find('> a').bind('click', function(e) {
-        e.preventDefault(), $(elem).find('.sub-menu').slideToggle();
+      $(this).find('> a').attr('data-no-instant', 'true');
+      $(this).find('> a:not(.bound)').addClass('bound').bind('click', function(e) {
+        e.preventDefault(), e.stopPropagation(), $(elem).find('.sub-menu').slideToggle();
       })
       $(window).on('click', function(e) {
         if ($(e.target).parents('li.menu-item-has-children').length === 0) $(elem).find('.sub-menu').slideUp();
