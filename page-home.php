@@ -16,9 +16,9 @@ get_header(); ?>
 </section>
 
 <?php
-new component('store_locator', array(
-	'api_key' => ''
-));
+// new component('store_locator', array(
+// 	'api_key' => ''
+// ));
 ?>
 
 <?php

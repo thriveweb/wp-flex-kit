@@ -12,8 +12,7 @@
  * @var	array
  */
  $components = array(
-   'social_links',
-   'maps'
+   'social_links'
  );
 
  /**

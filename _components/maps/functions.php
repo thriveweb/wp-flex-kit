@@ -1,6 +1,6 @@
 <?php
 
-$mapsKey = 'AIzaSyDvjdIzMiWHl4yZawMbfkCGuZLYuSm5SjM';
+$mapsKey = '';
 
 add_action( 'wp_enqueue_scripts', 'maps_script' );
 function maps_script() {

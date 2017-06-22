@@ -15,28 +15,25 @@
 
 header {
   height: auto;
-  padding: 1rem 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 10rem;
   z-index: 100;
   background: $black;
 
   @media screen and (#{$bp-desktop}) {
-    max-height: 100%;
-    overflow-y: auto;
+    min-height: 5rem;
+    height: auto;
   }
 
   + div.content-wrap {
-    margin-top: 12rem;
+    margin-top: 10rem;
+    overflow-x: hidden;
 
     @media screen and (#{$bp-desktop}) {
-      margin-top: 6.8rem;
-    }
-
-    @media screen and (#{$bp-mobile}) {
-      margin-top: 5.8rem;
+      margin-top: 5rem;
     }
   }
 
@@ -50,6 +47,8 @@ header {
     }
 
     nav {
+      background-color: $black;
+
       @media screen and (#{$bp-desktop}) {
         display: none;
         width: 100%;
@@ -75,8 +74,25 @@ header {
         li {
           margin: 0;
 
-          &.current-menu-item {
-            a {
+          &.current-menu-item, &.current-menu-parent {
+            > a {
+              color: $color-primary;
+            }
+          }
+
+          a {
+            padding: 1.75rem 3.5rem;
+            font-family: $font-family-secondary;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+            letter-spacing: .25rem;
+            color: $color-initial;
+
+            @media screen and (#{$bp-desktophd}) {
+              padding: 1.75rem 2rem;
+            }
+
+            &:hover {
               color: $color-primary;
             }
           }
@@ -85,7 +101,7 @@ header {
             position: absolute;
             display: none;
             z-index: 1;
-            background-color: $color-secondary;
+            background-color: $black;
             font-size: 15px;
             padding: 10px 0;
             margin-top: 1.5rem;
@@ -99,28 +115,25 @@ header {
               padding: 5px 0;
               cursor: pointer;
               text-align: center;
+              border-top: 2px solid $color-tertiary;
+              transition: .3s;
 
-              &:first-of-type {
+              &.current-menu-item  {
                 padding-top: 5px;
+                border-top: 2px solid $color-initial;
+              }
+
+              &:hover {
+                border-top: 2px solid $color-initial;
               }
 
               a {
-                font-size: 1.2rem;
                 display: block;
                 padding: .25rem 1.75rem;
               }
             }
           }
         }
-      }
-
-      a {
-        padding: 1.75rem;
-        font-family: $font-family-secondary;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: .25rem;
-        color: $color-initial;
       }
     }
 
@@ -160,9 +173,8 @@ header {
     }
 
     .logo {
-      height: 8rem;
+      height: 10rem;
       text-align: left;
-      margin: 1rem 0;
       cursor: pointer;
 
       img {
@@ -175,7 +187,7 @@ header {
         }
 
         @media screen and (#{$bp-mobile}) {
-          height: 3rem;
+          height: 3.5rem;
           top: .5rem;
         }
       }
