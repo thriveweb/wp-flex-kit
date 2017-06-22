@@ -62,11 +62,43 @@
   align-items: center;
 }
 
+.flex-row {
+  @extend .flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.flex-start {
+  @extend .flex;
+  align-items: flex-start;
+}
+
+.flex-end {
+  @extend .flex;
+  align-items: flex-end;
+}
+
+.flex-center {
+  @extend .flex;
+  align-items: center;
+}
+
+.flex-stratch {
+  @extend .flex;
+  align-items: stretch;
+}
+
+
 .background-image{
   position: absolute 0;
   z-index: -1;
   overflow: hidden;
   @include background(cover, center, no-repeat);
+
   img{
     width: 100%;
     @supports (object-fit: cover){
@@ -127,4 +159,15 @@
 
 .relative{
   position: relative;
+}
+
+.half-width {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+
+  @media screen and (#{$bp-tablet}) {
+    display: block;
+    width: 100%;
+  }
 }
