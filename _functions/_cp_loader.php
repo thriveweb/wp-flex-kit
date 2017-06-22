@@ -96,7 +96,7 @@ class Component extends Component_helper {
     $build_css = ENVIRONMENT === 'development' ? true : !file_exists($css_path);
     $build_js = ENVIRONMENT === 'development' ? true : !file_exists($js_path);
     if (($build_css || $build_js) && $cp_cache = self::get_cp_cache()) {
-      $css = $js = '';
+      $css = $js = "/*! WP Flex Kit | (c) Thrive Web | thriveweb.com.au */";
       foreach ($cp_cache as $cp_name) {
         $cp_path = self::get_cp_dir_path($cp_name) . '/' . $cp_name;
         $js_path = $cp_path . '.min.js';
