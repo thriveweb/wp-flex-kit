@@ -4,7 +4,7 @@ import './woocommerce/_plusminus';
 // import scroll_to from './elements/_scroll_to';
 
 function init () {
-  fastclick();
+  // fastclick();
   fonts();
   // scroll_to();
 }
