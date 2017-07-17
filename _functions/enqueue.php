@@ -18,5 +18,8 @@ function flex_non_cached_stylesheet() {
 
   $path_flex_js = get_stylesheet_directory() . '/js/flex-kit.min.js';
   if (file_exists($path_flex_js)) wp_enqueue_script( 'flex-kit-js', get_asset_url('js/flex-kit.min.js'), null, filemtime($path_flex_js), true );
-
+  
+  $vars = array( 'templateUrl' => get_stylesheet_directory_uri() );
+  wp_localize_script( 'mainjs', 'wpGlobal', $vars );
+  wp_localize_script( 'flex-kit-js', 'wpGlobal', $vars );
 }
