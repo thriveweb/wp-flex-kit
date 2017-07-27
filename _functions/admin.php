@@ -116,10 +116,14 @@ function my_login_logo() { ?>
 
   ///////////////////////////////////////////////////////
   // Custom menu
-  add_action('init', 'register_custom_menu');
-  function register_custom_menu() {
-    register_nav_menu('main', 'Main Menu');
-    register_nav_menu('foot', 'Footer Menu');
+  add_action( 'after_setup_theme', 'register_menu' );
+  function register_menu() {
+    register_nav_menus(array(
+      'main' => 'Main Navigation',
+      'sidebar' => 'Category sidebar',
+      'one' => 'Footer Navigation 1',
+      'two' => 'Footer Navigation 2'
+    ));
   }
 
   ///////////////////////////////////////////////////////
