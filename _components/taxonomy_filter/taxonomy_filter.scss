@@ -1,0 +1,88 @@
+//
+// woo filter
+// --------------------------------------------------
+
+
+// Imports variables and functions from theme
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+
+.cpt-filter {
+  align-items: flex-start;
+  justify-content: center !important;
+  h3 {
+    margin: 0 0 0.8rem 0;
+  }
+  .dropdown {
+    margin: 0 1rem;
+  }
+  .dropdown-link {
+    padding: 0.5rem;
+    border: 1px solid $light-grey;
+    width: 250px;
+    display: block;
+    color: $light-grey;
+    font-family: $font-family;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    position: relative;
+    &:before {
+      content: '\f078';
+      font-family: 'fontawesome';
+      position: absolute;
+      top: 0.4rem;
+      right: 1rem;
+    }
+    &.clicked:before {
+      content: '\f00d';
+      font-family: 'fontawesome';
+      position: absolute;
+      top: 0.4rem;
+      right: 1rem;
+    }
+  }
+  .taxonomy-filter {
+    position: relative;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem;
+      border: 1px solid $light-grey;
+      border-top: none;
+      width: 250px;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      background: white;
+    }
+    li {
+      margin: 0;
+    }
+    a {
+      font-family: $font-family;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+    }
+    .active a {
+      color: $color-secondary;
+      position: relative;
+      display: block;
+      &:before {
+        content: '\f00d';
+        font-family: 'fontawesome';
+        position: absolute;
+        top: 0;
+        right: 0.8rem;
+      }
+    }
+  }
+  .taxonomy-filter ul.open {
+    display: block;
+  }
+}

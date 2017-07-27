@@ -13,7 +13,7 @@
 // Base styles
 // -------------------------
 
-header {
+.header {
   height: auto;
   position: fixed;
   top: 0;
@@ -21,15 +21,19 @@ header {
   width: 100%;
   height: 10rem;
   z-index: 100;
-  background: $black;
-
+  transition: all 1s ease;
   @media screen and (#{$bp-desktop}) {
     min-height: 5rem;
     height: auto;
   }
 
+  &.fixed {
+    background: rgba(black,0.8);
+    border-bottom: 2px solid black;
+  }
+
   + div.content-wrap {
-    margin-top: 10rem;
+    // margin-top: 10rem;
     overflow-x: hidden;
 
     @media screen and (#{$bp-desktop}) {
@@ -47,7 +51,6 @@ header {
     }
 
     nav {
-      background-color: $black;
 
       @media screen and (#{$bp-desktop}) {
         display: none;
@@ -73,58 +76,53 @@ header {
 
         li {
           margin: 0;
-
+          position: relative;
           &.current-menu-item, &.current-menu-parent {
             > a {
-              color: $color-primary;
+              color: $color-secondary;
             }
           }
 
           a {
-            padding: 1.75rem 3.5rem;
-            font-family: $font-family-secondary;
-            font-size: 2.4rem;
+            padding: 1.75rem 1.3rem;
+            font-family: $font-family;
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: .25rem;
             color: $color-initial;
-
             @media screen and (#{$bp-desktophd}) {
-              padding: 1.75rem 2rem;
+              padding: 1.75rem 1.3rem;
             }
-
             &:hover {
-              color: $color-primary;
+              color: $color-secondary;
             }
           }
 
           .sub-menu {
             position: absolute;
+            left: 0;
+            top: 40px;
             display: none;
-            z-index: 1;
-            background-color: $black;
+            z-index: 2;
+            background-color: rgba($black, 0.8);
             font-size: 15px;
-            padding: 10px 0;
-            margin-top: 1.5rem;
-
+            padding: 0 1rem 1rem 0;
+            width: 220px;
             @media screen and (#{$bp-desktop}) {
               position: relative;
             }
 
             li {
               display: block;
-              padding: 5px 0;
+              padding: 0.8rem 0;
               cursor: pointer;
-              text-align: center;
-              border-top: 2px solid $color-tertiary;
               transition: .3s;
-
               &.current-menu-item  {
                 padding-top: 5px;
-                border-top: 2px solid $color-initial;
               }
 
               &:hover {
-                border-top: 2px solid $color-initial;
+                color: $color-secondary;
               }
 
               a {
@@ -134,12 +132,24 @@ header {
             }
           }
         }
+        li.menu-item-has-children:hover {
+          .sub-menu { display: block; }
+        }
+        .book-app a {
+          font-family: $font-family-secondary;
+          text-transform: lowercase;
+          font-weight: 700;
+          font-size: 1.6rem;
+          letter-spacing: normal;
+          padding-left: 4rem;
+        }
       }
     }
 
     #hamburger {
       position: absolute;
       top: 2.5rem;
+      right: 0;
       transform: translateY(-50%);
       display: none;
       cursor: pointer;
@@ -173,7 +183,7 @@ header {
     }
 
     .logo {
-      height: 10rem;
+      height: 6rem;
       text-align: left;
       cursor: pointer;
 
@@ -192,5 +202,32 @@ header {
         }
       }
     }
+  }
+}
+
+.page-header{
+  position: relative;
+  height: 40rem;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .background-image{
+    opacity: .6;
+    filter: grayscale(100%);
+  }
+  .container{
+    max-width: 60rem;
+    text-align: center;
+  }
+  .title {
+    color: white;
+    position: relative;
+    text-transform: lowercase;
+    margin: 0;
+    font-size: 4.0rem;
   }
 }

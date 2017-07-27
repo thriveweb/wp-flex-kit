@@ -1,0 +1,29 @@
+//
+// Banner
+// --------------------------------------------------
+
+
+// Imports variables and functions from theme
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+.banner {
+  position: relative;
+  .background-image{
+    opacity: 0;
+    transition: all 2s ease;
+    &.active{
+      opacity: .5;
+    }
+  }
+  .slide{
+    min-height: 30rem;
+    width: 100%;
+  }
+}

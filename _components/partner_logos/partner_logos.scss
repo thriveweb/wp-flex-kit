@@ -1,0 +1,17 @@
+.partners {
+  width: 100%;
+  margin: 4rem 0;
+  .partner_logos {
+    width: 100%;
+    position: relative;
+    .slide {
+      width: 120px;
+      height: 40px;
+      background-size: contain;
+      transition: filter 1s;
+      background-size: contain !important;
+      margin: 0 2rem;
+      display: block;
+    }
+  }
+}

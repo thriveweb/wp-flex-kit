@@ -11,6 +11,7 @@
 *
 * @var	array
 */
+
 $custom_args = array(
   'post_type' => 'post',
   'post_status' => 'publish',
@@ -19,7 +20,11 @@ $custom_args = array(
   'posts_per_page'=> '-1',
   'post__in' => array(),
   'taxonomy' => false,
-  'taxonomy_terms' => false
+  'taxonomy_terms' => false,
+  'operator' => 'IN', //  Possible values are 'IN', 'NOT IN', 'AND', 'EXISTS' and 'NOT EXISTS'. Default value is 'IN'.
+  'meta_key' => false,
+  'meta_value' => false,
+  'aos' => '',
 );
 
 /**
@@ -39,7 +44,13 @@ if (!function_exists('overview')) {
         while($result->have_posts()) {
           $result->the_post();
           global $post;
-          new component('overview_item');
+          if ($args['post_type'] == "product") {
+            new component('overview_item_product', array(
+              'aos' => $args['aos'],
+            ));
+          } else {
+            new component('overview_item');
+          }
         }
       } ?>
     </div>
@@ -59,12 +70,23 @@ if (!function_exists('overview')) {
 */
 if (!function_exists('get_query_args')) {
   function get_query_args(array $args) {
-    $exprected_args = array('post_type', 'orderby', 'order', 'posts_per_page', 'post__in', 'taxonomy', 'taxonomy_terms');
+    $exprected_args = array(
+      'post_type',
+      'orderby',
+      'order',
+      'posts_per_page',
+      'post__in',
+      'taxonomy',
+      'taxonomy_terms',
+      'operator',
+      'meta_key',
+      'meta_value',
+    );
     $query_args = array();
     foreach ($args as $arg => $val) {
       if (in_array($arg, $exprected_args)) {
         if ($val && (!empty($val) || count($val) > 0)) {
-          if ($arg === 'taxonomy' || $arg === 'taxonomy_terms') {
+          if ($arg === 'taxonomy' || $arg === 'taxonomy_terms' || $arg === 'operator') {
             continue;
           }
           $query_args[$arg] = $val;
@@ -74,14 +96,18 @@ if (!function_exists('get_query_args')) {
     }
     if (!$args['taxonomy'] && $args['taxonomy_terms']) exit('Please, supply a taxonomy');
     if (!$args['taxonomy_terms'] && $args['taxonomy']) exit('Please, supply taxonomy terms');
+    if (!$args['operator']) { $operator = "IN"; } else { $operator = $args['operator']; }
     if ($args['taxonomy'] && $args['taxonomy_terms']) {
+
       $query_args['tax_query'] = array(
         array(
           'taxonomy' => $args['taxonomy'],
           'field' => 'slug',
-          'terms' => $args['taxonomy_terms']
+          'terms' => $args['taxonomy_terms'],
+          'operator' => $operator,
         )
       );
+
     }
     return $query_args;
   }

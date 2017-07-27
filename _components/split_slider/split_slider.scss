@@ -1,0 +1,51 @@
+.testimonials-slider {
+  .flex {
+    align-items: flex-start;
+  }
+  .one-half {
+    width: 50%;
+    &.first {
+      width: 40%;
+      margin: 0 0 0 auto;
+    }
+    .story-images,
+    .story-excerpt {
+      width: 100%;
+      display: block;
+      .slide {
+        width: 100%;
+        display: block;
+        img {
+          width: 100%;
+          display: block;
+          opacity: 0.5;
+        }
+      }
+    }
+    .story-images .slide {
+        width: 48%;
+        margin: 0 2.1% 0 0;
+        &.is-selected img {
+          opacity: 1;
+        }
+    }
+    .story-excerpt .excerpt {
+      padding: 0 4rem 0 0;
+    }
+  }
+  .story-excerpt {
+    .flickity-slider {
+      transform: none !important;
+    }
+    .slide {
+      left: 0 !important;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+      z-index: -1;
+      &.is-selected {
+        opacity: 1;
+        z-index: 0
+      }
+    }
+  }
+}

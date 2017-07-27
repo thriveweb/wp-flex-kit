@@ -3,13 +3,13 @@ const $ = jQuery;
 function new_map( $el ) {
 	const $markers = $el.find('.marker');
 	const args = {
-		zoom		: 16,
-		center		: new google.maps.LatLng(0, 0),
+		center: new google.maps.LatLng(0, 0),
 		mapTypeId	: google.maps.MapTypeId.ROADMAP,
 		draggable: false,
 		disableDefaultUI: true,
 		scrollwheel: false,
-		styles: require('./custom_style.json')
+		styles: [{'featureType': 'administrative','elementType': 'all','stylers': [{'visibility': 'on'},{'saturation': -100},{'lightness': 20}]},{'featureType': 'road','elementType': 'all','stylers': [{'visibility': 'on'},{'saturation': -100},{'lightness': 40}]},{'featureType': 'water','elementType': 'all','stylers': [{'visibility': 'on'},{'saturation': -10},{'lightness': 30}]},{'featureType': 'landscape.man_made','elementType': 'all','stylers': [{'visibility': 'simplified'},{'saturation': -60},{'lightness': 10}]},{'featureType': 'landscape.natural','elementType': 'all','stylers': [{'visibility': 'simplified'},{'saturation': -60},{'lightness': 60}]},{'featureType': 'poi','elementType': 'all','stylers': [{'visibility': 'off'},{'saturation': -100},{'lightness': 60}]},{'featureType': 'transit','elementType': 'all','stylers': [{'visibility': 'off'},{'saturation': -100},{'lightness': 60}]}],
+		zoom: 14,
 	};
 	const map = new google.maps.Map( $el[0], args);
 	map.markers = [];
@@ -46,19 +46,20 @@ function center_map( map ) {
 	});
 	if( map.markers.length === 1 ) {
 		map.setCenter( bounds.getCenter() );
-		map.setZoom( 16 );
+		map.setZoom( 14 );
 	} else {
 		map.fitBounds( bounds );
 	}
 
 	// Recentering map
 	// map.panBy(-((window.innerWidth / 2) / 3), 0)
+
 }
 
-(function initMap($) {
-	$(function() {
-		$('.cp-map').each(function(i){
+(function singleInitMap($) {
+	window.singleInitMap = function () {
+		$('.cp-map').each(function(){
 			new_map( $(this) );
 		})
-	})
+	}
 })(jQuery)

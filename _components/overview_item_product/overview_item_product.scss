@@ -1,0 +1,89 @@
+//
+// Overview Item
+// --------------------------------------------------
+
+// Imports variables and functions from theme otherwice not accessible
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+a.overview-block-product {
+  position: relative;
+  display: block;
+  width: calc(100% / 3 - 2rem);
+  text-align: center;
+  text-transform: uppercase;
+  color: $dark-grey;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  @media screen and (#{$bp-tablet}) {
+    width: calc(50% - 2rem);
+  }
+  @media screen and (#{$bp-mobile}) {
+    width: 100%;
+  }
+  .hover {
+    position: relative;
+    span {
+      background: rgba(white, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+  &:hover {
+    .hover {
+      top: -.5rem;
+      span {
+        opacity: 1;
+      }
+    }
+    img {
+      opacity: 1;
+
+    }
+    h4, span {
+      color: $color-primary;
+    }
+  }
+  * {
+    transition: all .6s ease-out;
+  }
+  img {
+    position: relative;
+    top: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  h4 {
+    color: inherit;
+    font-size: 2rem;
+    font-family: $font-family;
+    margin: 0;
+    @media screen and (#{$bp-phablet}) {
+      font-size: 1.6rem;
+    }
+  }
+  span {
+    font-size: 1.6rem;
+    @media screen and (#{$bp-phablet}) {
+      font-size: 1.2rem;
+    }
+    &.cat {
+      font-family: $font-family-secondary;
+    }
+  }
+}

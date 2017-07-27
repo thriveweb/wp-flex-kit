@@ -1,0 +1,51 @@
+//
+// Banner
+// --------------------------------------------------
+
+
+// Imports variables and functions from theme
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+.title {
+  text-transform: uppercase;
+  margin: 0 0 4rem 0;
+  h2 {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    color: $dark-grey;
+    letter-spacing: 1rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    font-size: 4.5rem;
+    font-weight: 300;
+    &:before, &:after {
+      content: "•";
+      display: inline-block;
+      margin: 0 1rem;
+      font-size: 2rem;
+      position: relative;
+      top: -1rem;
+    }
+  }
+  h3 {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    color: $dark-grey;
+    letter-spacing: 0.3rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    font-weight: 200;
+    font-size: 2.5rem;
+  }
+}

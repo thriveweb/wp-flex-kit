@@ -1,0 +1,30 @@
+//
+// Gravity Form
+// --------------------------------------------------
+
+// Imports variables and functions from theme otherwice not accessible
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+// Base styles
+// -------------------------
+
+.gravity-form-include {
+
+  &.inline {
+    form {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      input {
+        margin: 0;
+        padding: 0 1rem;
+      }
+    }
+  }
+
+}

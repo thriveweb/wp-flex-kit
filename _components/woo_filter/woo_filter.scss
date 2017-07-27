@@ -1,0 +1,44 @@
+//
+// woo filter
+// --------------------------------------------------
+
+
+// Imports variables and functions from theme
+// -------------------------
+
+@import '../../sources/scss/_Functions';
+@import '../../sources/scss/_Variables';
+@import '../../sources/scss/_Color';
+
+.woo-cats {
+  .sidebar-woo-filter {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        a {
+          &:before {
+            content: '\f096';
+            font-family: 'fontawesome';
+            margin: 0 1.5rem 0 0;
+          }
+        }
+        &.active {
+          a {
+            color: black;
+            &:before {
+              content: '\f046';
+              font-family: 'fontawesome';
+              margin: 0 1.5rem 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.orderby option[value="rating"]{
+   display: none;
+}

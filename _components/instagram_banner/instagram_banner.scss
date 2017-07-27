@@ -30,13 +30,11 @@ $height: 15rem;
   }
 
   .instagram-banner--row{
-    height: $height;
     overflow: hidden;
-
     .instagram-banner--item{
       height: $height;
       display: inline-block;
-      
+      padding: 0.4rem;
       img{
         height: 100%;
         width: auto;

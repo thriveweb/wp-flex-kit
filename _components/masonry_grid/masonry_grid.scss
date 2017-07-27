@@ -1,0 +1,28 @@
+.grid {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .grid-sizer {
+    width: 19%;
+    margin: 0.5%;
+  }
+  .grid-item {
+    display: inline-block;
+    width: 19%;
+    height: auto;
+    overflow: hidden;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &:nth-child(1),
+    &:nth-child(9) {
+      width: 39%;
+    }
+  }
+}

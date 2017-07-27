@@ -8,16 +8,38 @@
 @import '../../sources/scss/_Functions';
 @import '../../sources/scss/_Variables';
 @import '../../sources/scss/_Color';
+//
+// Store Locator
+// --------------------------------------------------
+
 
 .store-locator {
-
+  color: $dark-grey;
 }
 
 .store-locator--heading {
-
+  color: $color-secondary;
 }
 
-.store-locator--inputs {}
+.store-locator--inputs {
+  input {
+    padding: 1rem 2rem;
+    font-weight: 600;
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-weight: 400;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-weight: 400;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-weight: 400;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-weight: 400;
+  }
+
+}
 
 .store-locator--map {
   height: 50rem;
@@ -26,17 +48,24 @@
 
 .store-locator--marker {}
 
-.store-locator--marker--title {}
+.store-locator--marker--title {
+  color: $color-secondary;
+}
 
 .store-locator--marker--meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  .button {
+    margin: 2rem 0 0 0;
+  }
 }
 
 .store-locator--marker--meta--heading {
   text-transform: capitalize;
   margin-right: 1rem;
-  font-weight: 400;
+  font-weight: 600;
+}
+.store-locator--subheading {
 }
 
 .store-locator--results {
@@ -45,11 +74,97 @@
   align-items: stretch;
   flex-wrap: wrap;
   padding-top: 5rem;
+  color: $dark-grey;
+  a {
+    color: $dark-grey;
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+  .button {
+    margin: 2rem 50% 0 50%;
+  }
 }
 
 .store-locator--results--item {
   width: calc(33.33% - 2rem);
   margin: 1rem;
-  border: 1px solid $light-grey;
+  border: 1px solid $color-quaternary;
   padding: 1rem 2rem;
+  text-align: center;
+}
+
+
+
+.button, button {
+	background: linear-gradient(to right, lighten($mid-grey, 3%) 50%, $mid-grey 50%);
+	background-color: $mid-grey;
+	background-size: 200% 100%;
+	background-position: right bottom;
+	border: none;
+	box-sizing: border-box;
+	color: $color-initial;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.6rem;
+	font-weight: bold;
+	letter-spacing: .1rem;
+	padding: 0.6rem 3rem 1rem 3rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: lowercase;
+	white-space: nowrap;
+	transition: all .4s ease;
+	font-family: $font-family-secondary;
+	@media screen and (#{$bp-mobile}) {
+		width: 100%;
+	}
+
+	&:hover {
+		background-position: left bottom;
+		color: $color-initial;
+	}
+
+	&:active {
+		transform: scale(.975);
+	}
+
+	&.secondary {
+		background: linear-gradient(to right, darken($color-secondary, 10%) 50%, $color-secondary 50%);
+		background-size: 200% 100%;
+		background-position: right bottom;
+		background-color: $color-secondary;
+		color: $color-primary;
+
+		&:hover {
+			background-position: left bottom;
+		}
+	}
+
+	&.bordered {
+		background: linear-gradient(to right, rgba($color-secondary, .25) 50%, transparent 50%);
+		background-size: 200% 100%;
+		background-position: right bottom;
+		background-color: transparent!important;
+		color: $color-primary;
+		border: 2px solid $color-primary;
+
+		&:hover {
+			background-position: left bottom;
+			border: 2px solid $color-secondary;
+			color: $black;
+		}
+
+		&.secondary {
+			background: linear-gradient(to right, rgba($color-secondary, .25) 50%, transparent 50%);
+			background-size: 200% 100%;
+			background-position: right bottom;
+			color: $color-secondary;
+			border-color: $color-secondary;
+
+			&:hover {
+				background-position: left bottom;
+			}
+		}
+	}
 }

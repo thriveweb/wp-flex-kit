@@ -1,0 +1,56 @@
+.footer {
+  padding: 8rem 0 0 0;
+  border-top: 1px solid $light-grey;
+  .flex {
+    align-items: flex-start;
+  }
+  .footer-logo {
+    width: 150px;
+    opacity: 0.6;
+  }
+  .one-quater {
+    h3 {
+      font-family: $font-family;
+      margin: 0 0 2rem 0;
+      color: $mid-grey;
+      text-transform: uppercase;
+      letter-spacing: 0.4rem;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-transform: uppercase;
+      a {
+        color: $light-grey;
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+  .social_links {
+    a {
+      display: block;
+      margin: 0 0 0 1rem;
+      padding: 0.2rem 0 0 0;
+      border: 1px solid $light-grey;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      color: $light-grey !important;
+      border-radius: 50%;
+      &:hover {
+        border: 1px solid $dark-grey;
+        color: $dark-grey !important;
+      }
+    }
+  }
+  .copy {
+    display: block;
+    text-align: center;
+    color: $light-grey;
+    margin: 4rem 0 1rem 0;
+    font-size: 1.2rem;
+  }
+}

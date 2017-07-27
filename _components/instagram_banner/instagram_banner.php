@@ -24,6 +24,9 @@ $custom_args = array(
 * @param    (array)       All arguments for the component
 * @return   (string)      HTML of this compnent
 */
+
+
+
 if (!function_exists('instagram_banner')) {
 	function instagram_banner(array $args) {
 		if (empty($args['username'])) $args['username'] = 'instagram'; // default username to get always a response
@@ -32,9 +35,16 @@ if (!function_exists('instagram_banner')) {
 		$i = 0;
 		ob_start(); ?>
 		<div <?= $args['id'] ?> class="instagram-banner--wrap <?= $args['classes'] ?>">
-			<h4 class="instagram-banner--title"><i class="fa fa-instagram"></i>
-				<a href="http://instagram.com/<?= $account; ?>" target="_blank" >@<?= $account; ?></a>
-			</h4>
+			<div class="title center relative wrap">
+				<?php if(get_field('instagram_title', 3)): while(has_sub_field('instagram_title', 3)): ?>
+					<?php if(get_sub_field('bold')): ?>
+						<h2><?php the_sub_field('bold'); ?></h2>
+					<?php endif; ?>
+					<?php if(get_sub_field('light')): ?>
+						<h3><?php the_sub_field('light'); ?></h3>
+					<?php endif; ?>
+				<?php endwhile; endif; ?>
+			</div>
 			<div class="instagram-banner--row">
 				<?php foreach (scrape_insta($account) as $item) : $i++; ?>
 					<a target="_blank" class="instagram-banner--item" href="<?= $item['link'] ?>"><img src="<?= $item['images']['standard_resolution']['url'] ?>"></a>

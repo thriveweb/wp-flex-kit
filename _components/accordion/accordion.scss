@@ -15,22 +15,21 @@
 
 .accordion {
   position: relative;
+  margin: 4rem 0;
 
   .accordion-item {
     position: relative;
     height: auto;
     display: block;
-    border-bottom: 2px solid $dark-grey;
+    border-bottom: 2px solid rgba($light-grey, 0.2);
 
     h4 {
       position: relative;
-      min-height: 50px;
-      line-height: 2.5rem;
       letter-spacing: .1rem;
       text-transform: uppercase;
       color: inherit;
       font-size: 1.7rem;
-      margin: 0;
+      margin: 2rem 0;
       cursor: pointer;
 
       svg {
@@ -52,7 +51,7 @@
 
     > div {
       display: none;
-
+      margin: 0 0 2rem 0;
       .flex {
         flex-direction: column;
         align-items: center;
@@ -66,6 +65,7 @@
 
       > div {
         display: block;
+        margin: 0 0 2rem 0;
       }
     }
   }

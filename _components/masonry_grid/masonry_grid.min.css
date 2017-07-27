@@ -1,0 +1,1 @@
+.grid{position:relative;overflow:hidden}.grid:after{content:'';display:block;clear:both}.grid .grid-sizer{width:19%;margin:0.5%}.grid .grid-item{display:inline-block;width:19%;height:auto;overflow:hidden}.grid .grid-item img{display:block;width:100%;height:auto}.grid .grid-item:nth-child(1),.grid .grid-item:nth-child(9){width:39%}
