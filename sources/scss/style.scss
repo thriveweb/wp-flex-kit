@@ -7,6 +7,10 @@ Author URI: https://thriveweb.com.au/
 // Sass Modules
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
+@import '_Normalize';
+@import '_Functions';
+@import '_Variables';
+
 @import '_Color';
 @import '_Anim';
 @import '_Base';
