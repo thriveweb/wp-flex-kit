@@ -12,6 +12,12 @@
   &.thick {
     padding: 10rem 0;
   }
+  &.nopad {
+    padding: 0;
+  }
+  &.basepad {
+    padding: 0 0 10rem 0;
+  }
 }
 
 
@@ -19,7 +25,6 @@
   width: calc(100% - 2rem);
   max-width: $container-width;
   margin: 0 auto;
-
   &.small {
     max-width: $container-width-small;
   }
@@ -41,6 +46,9 @@
 }
 .light{
   background-color: $light-grey;
+}
+.lighter{
+  background-color: rgba($light-grey, 0.1);
 }
 .primary{
   background-color: $color-primary;
@@ -92,10 +100,25 @@
   align-items: stretch;
 }
 
+.one-half {
+  width: 49%;
+  position: relative;
+}
+.one-third {
+  width: 32%;
+  position: relative;
+}
+.one-quater {
+  width: 24%;
+  position: relative;
+}
+.three-quaters {
+  width: 74%;
+  position: relative;
+}
 
-.background-image{
+.background-image {
   position: absolute 0;
-  z-index: -1;
   overflow: hidden;
   @include background(cover, center, no-repeat);
 

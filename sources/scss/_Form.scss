@@ -1,19 +1,25 @@
 
 // Form
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 input,
 textarea,
 select {
 	appearance: none; // Removes awkward default styles on some inputs for iOS
 	background-color: transparent;
 	border: .1rem solid $color-quaternary;
-	border-radius: .4rem;
+	border-radius: 0 !important;
 	box-shadow: none;
 	box-sizing: border-box;
 	height: 3.8rem;
 	padding: .6rem 1.0rem; // The .6rem vertically centers text on FF, ignored by Webkit
 	width: 100%;
-
 	&:focus {
 		border: .1rem solid $color-primary;
 		outline: 0;
@@ -42,6 +48,10 @@ fieldset {
 input[type='checkbox'],
 input[type='radio'] {
 	display: inline;
+}
+
+.gfield_label {
+	display: none;
 }
 
 .label-inline {
@@ -95,4 +105,17 @@ input[type='radio'] {
 		margin-right: 5px;
 		color: $color-primary;
 	}
+}
+
+.validation_error,
+.validation_message {
+	display: none;
+}
+.gfield_error input,
+.gfield_error textarea,
+.gfield_error select {
+	border-color: tomato;
+}
+img.gform_ajax_spinner {
+	max-width: 25px;
 }

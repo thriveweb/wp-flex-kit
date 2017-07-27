@@ -2,12 +2,13 @@
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $color-initial: #ffffff;
-$color-primary: #9b4dca;
-$color-secondary: #606c76;
+$color-primary: #060606;
+$color-secondary: #b5995a;
 $color-tertiary: #f4f5f6;
 $color-quaternary: #d1d1d1;
 
-$dark-grey: #565656;
-$mid-grey: #cccccc;
-$light-grey: whitesmoke;
+$dark-grey: #060606;
+$mid-grey: #333333;
+$light-grey: lighten(black, 60%);
+
 $black: lighten(black, 10%);

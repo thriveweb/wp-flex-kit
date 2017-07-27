@@ -3,12 +3,21 @@
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 blockquote {
-	border-left: 0.3rem solid $color-quaternary;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 1rem 1.5rem;
-
-	& *:last-child {
-		margin: 0;
+	padding: 5rem;
+	position: relative;
+	font-family: $font-family-secondary;
+	color: $light-grey;
+	font-style: italic;
+	font-size: 2.2rem;
+	text-align: center;
+	&:before {
+		content: '\f10d';
+		font-family: 'fontawesome';
+		color: $light-grey;
+		position: absolute;
+		top: -2rem;
+		left: -5rem;
+		font-size: 7rem;
+		opacity: 0.2;
 	}
 }

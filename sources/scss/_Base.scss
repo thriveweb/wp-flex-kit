@@ -10,8 +10,8 @@ html {
 }
 
 body {
-	color: $color-secondary;
-	font-family: $font-family;
+	color: $color-primary;
+	font-family: $font-family-system;
 	font-size: 1.6em; // currently ems cause chrome bug misinterpreting rems on body element
 	font-weight: 300;
 	letter-spacing: .01em;
